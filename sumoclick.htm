@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palla</title>
+    <style>
+        body {
+            background-color: #fff;
+            margin: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #3442db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px 5px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #ball{
+            width: 100px;
+            height: 100px;
+            align-items: center ;
+            position: absolute;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button onclick="moveImage('up')">alto</button>
+        <br>
+        <button onclick="moveImage('left')">sinistra</button>
+        <button onclick="moveImage('right')">destra</button>
+        <br>
+        <button onclick="moveImage('down')">basso</button>
+    </div>
+    <img id="ball" src="https://static.basketballstore.net/image/cache/catalog/basketball%20store/accessori/palloni_canestri/GK2483-adidas-lil-stripe-pallone-basket-sorriso-smile6-638x638.jpg">
+    <script>
+    	const movingImage = document.getElementById('ball');
+        function moveImage(direction) {
+            const step = 10;
+            let currentLeft = parseInt(getComputedStyle(movingImage).left) || 0;
+            let currentTop = parseInt(getComputedStyle(movingImage).top) || 0;
+        
+            switch (direction) {
+                case 'up':
+                    movingImage.style.top = ${currentTop - step}px;
+                    break;
+                case 'down':
+                    movingImage.style.top = ${currentTop + step}px;
+                    break;
+                case 'left':
+                    movingImage.style.left = ${currentLeft - step}px;
+                    break;
+                case 'right':
+                    movingImage.style.left = ${currentLeft + step}px;
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
