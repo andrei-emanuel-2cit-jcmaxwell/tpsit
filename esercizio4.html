@@ -3,37 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stampa Numeri e 10%</title>
+  <title>Contatore e Tabelline</title>
+  
 </head>
 <body>
-
-  <label for="numeroInput">Inserisci un numero:</label>
-  <input type="number" id="numeroInput">
-
-  <button onclick="stampaNumeri()">Stampa Numeri</button>
-
-  <div id="risultatoDiv"></div>
-
-  <script>
-    function stampaNumeri() {
-      var numeroInput = document.getElementById('numeroInput').value;
-      var risultatoDiv = document.getElementById('risultatoDiv');
-
-      if (!isNaN(numeroInput) && numeroInput > 0) {
-        var numero = parseInt(numeroInput);
-        risultatoDiv.innerHTML = '';
-
-        for (var i = 1; i <= numero; i++) {
-          risultatoDiv.innerHTML += i + '<br>';
+    <script>
+        var contatore = 1;
+    
+        function avviaContatore() {
+          var intervallo = setInterval(function() {
+            if (contatore <= 5) {
+              console.log(contatore);
+              contatore++;
+            } else {
+              clearInterval(intervallo);
+              stampaTabelline();
+            }
+          }, 1000);
         }
+    
+        function stampaTabelline() {
+          var tabellineDiv = document.getElementById('tabellineDiv');
+          tabellineDiv.innerHTML = '';
+    
+          for (var i = 1; i <= 10; i++) {
+            tabellineDiv.innerHTML += '<h2>tabellina del ' + i + ':</h2>';
+            for (var j = 1; j <= 10; j++) {
+              tabellineDiv.innerHTML += i * j + '<br>';
+            }
+          }
+        }
+      </script>
+  <button onclick="avviaContatore()">avvia contatore</button>
 
-        var dieciPercento = 0.1 * numero;
-        risultatoDiv.innerHTML += '<br>10% del numero: ' + dieciPercento;
-      } else {
-        alert('Inserisci un numero valido e maggiore di zero.');
-      }
-    }
-  </script>
+  <div id="tabellineDiv"></div>
 
 </body>
 </html>
