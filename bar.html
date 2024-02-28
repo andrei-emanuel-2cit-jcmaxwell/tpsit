@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<style>
+    button {
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .hidden {
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+<button id="instructions">Istruzioni</button>
+<button id="menu">Menu Drink</button>
+<button id="orders">Ordini</button>
+
+<div id="drinkList" class="hidden">
+    <h3>Menu Drink</h3>
+    <ul>
+        <li>Gin Tonic</li>
+        <li>Mojito</li>
+        <li></li>
+    </ul>
+</div>
+
+<div id="orderList" class="hidden">
+    <h3>Ordini</h3>
+    <ul id="ordersOutput"></ul>
+</div>
+
+<script>
+document.getElementById("instructions").addEventListener("click", function() {
+    alert("Ciao! Clicca sul secondo bottone per vedere il menu dei drink oppure clicca sul terzo bottone per fare un ordine.");
+});
+
+document.getElementById("menu").addEventListener("click", function() {
+    document.getElementById("drinkList").classList.remove("hidden");
+});
+
+document.getElementById("orders").addEventListener("click", function() {
+    var order = prompt("Inserisci l'ordinazione:");
+    if (order) {
+        var ordersOutput = document.getElementById("ordersOutput");
+        var listItem = document.createElement("li");
+        listItem.textContent = order;
+        ordersOutput.appendChild(listItem);
+        document.getElementById("orderList").classList.remove("hidden");
+    }
+});
+</script>
+
+</body>
+</html>
