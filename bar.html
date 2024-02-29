@@ -3,24 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title></title>
+<title>Menu del Bar</title>
 <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+    }
+    #menuContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    #menuButtons {
+        text-align: center;
+    }
     button {
         margin: 10px;
         padding: 10px 20px;
         font-size: 16px;
         cursor: pointer;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+    button:hover {
+        background-color: #45a049;
     }
     .hidden {
         display: none;
+    }
+    #drinkList, #orderList {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    h3 {
+        text-align: center;
+    }
+    ul {
+        padding: 0;
+        list-style-type: none;
+    }
+    li {
+        margin: 5px 0;
     }
 </style>
 </head>
 <body>
 
-<button id="instructions">Istruzioni</button>
-<button id="menu">Menu Drink</button>
-<button id="orders">Ordini</button>
+<div id="menuContainer">
+    <div id="menuButtons">
+        <button id="instructions">Istruzioni</button>
+        <button id="menu">Menu Drink</button>
+        <button id="orders">Ordini</button>
+    </div>
+</div>
 
 <div id="drinkList" class="hidden">
     <h3>Menu Drink</h3>
