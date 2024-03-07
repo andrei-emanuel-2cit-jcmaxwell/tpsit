@@ -1,357 +1,156 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sushi</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <style>
-    
-.extra-spacing {
-  margin-bottom: 300px; 
-  display:flex; 
-  
-}
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drone Militari</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3;
+  }
 
-  </style>
+  .container {
+    display: flex;
+    grid-template-areas:
+      "drone1 drone2 drone3"
+      "drone4 drone5 drone6"
+      "drone7 drone8 drone9"
+      "drone10 drone10 drone10";
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
 
+  .drone {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .drone img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+
+  p {
+    margin: 5px 0;
+  }
+</style>
 </head>
-  <body>      
-      <div class="container my-5 text-center" style="max-width: 580px;">
-        
-        <h1>Droni Militari</h1>
-        <p class="lead">Ecco una lista di 15 droni militari</p>
+<body>
 
+<div class="container">
+  <div class="drone" id="drone1">
+    <img src="download.jpg" alt="Drone 1">
+    <p>Nome: Predator MQ-9</p>
+    <p>Produttore: General Atomics Aeronautical Systems</p>
+    <p>Nazionalità: USA</p>
+    <p>Dimensioni: 10.97m di lunghezza, 3.96m di altezza</p>
+    <p>Velocità: 300 km/h</p>
+    <p>Armamento: Missili Hellfire</p>
+    <a href=https://www.youtube.com/watch?v=gpOfcchmYGE>Video youtube</a>
+  </div>
+  <div class="drone" id="drone2">
+    <img src="download (1).jpg" alt="Drone 2">
+    <p>Nome: Heron TP</p>
+    <p>Produttore: Israel Aerospace Industries</p>
+    <p>Nazionalità: Israele</p>
+    <p>Dimensioni: 14m di lunghezza, 4.6m di altezza</p>
+    <p>Velocità: 370 km/h</p>
+    <p>Armamento: Varie opzioni, inclusi missili</p>
+    <a href=https://www.youtube.com/watch?v=NZIaXsAAlCw>Video youtube</a>
+  </div>
+  <div class="drone" id="drone3">
+    <img src="download (2).jpg" alt="Drone 3">
+    <p>Nome: Bayraktar TB2</p>
+    <p>Produttore: Baykar Makina</p>
+    <p>Nazionalità: Turchia</p>
+    <p>Dimensioni: 6.5m di lunghezza, 2m di altezza</p>
+    <p>Velocità: 222 km/h</p>
+    <p>Armamento: Munizioni laser, missili</p>
+    <a href=https://www.youtube.com/watch?v=KIC1SBEUi_Q>Video youtube</a>
+  </div>
+  <div class="drone" id="drone4">
+    <img src="download (3).jpg" alt="Drone 4">
+    <p>Nome: CH-4 Rainbow</p>
+    <p>Produttore: China Aerospace Science and Technology Corporation</p>
+    <p>Nazionalità: Cina</p>
+    <p>Dimensioni: 9.05m di lunghezza, 2.77m di altezza</p>
+    <p>Velocità: 280 km/h</p>
+    <p>Armamento: Varie opzioni, inclusi missili</p>
+    <a href=https://www.youtube.com/watch?v=FE2h1eElbTw>Video youtube</a>
+  </div>
+  <div class="drone" id="drone5">
+    <img src="download (4).jpg" alt="Drone 5">
+    <p>Nome: Reaper MQ-9B</p>
+    <p>Produttore: General Atomics Aeronautical Systems</p>
+    <p>Nazionalità: USA</p>
+    <p>Dimensioni: 11m di lunghezza, 4.6m di altezza</p>
+    <p>Velocità: 482 km/h</p>
+    <p>Armamento: Missili Hellfire, bombe guidate</p>
+    <a href=https://www.youtube.com/watch?v=gpOfcchmYGE&t=1s>Video youtube</a>
+  </div>
+  <div class="drone" id="drone6">
+    <img src="download (5).jpg" alt="Drone 6">
+    <p>Nome: Wing Loong II</p>
+    <p>Produttore: Chengdu Aircraft Industry Group</p>
+    <p>Nazionalità: Cina</p>
+    <p>Dimensioni: 11m di lunghezza, 4.2m di altezza</p>
+    <p>Velocità: 370 km/h</p>
+    <p>Armamento: Missili AR-1, bombe guidate</p>
+    <a href=https://www.youtube.com/watch?v=yF4eCMJURp0>Video youtube</a>
+  </div>
+  <div class="drone" id="drone7">
+    <img src="Secretive_RQ-170_Sentinel_Spotted_1.webp" alt="Drone 7">
+    <p>Nome: RQ-170 Sentinel</p>
+    <p>Produttore: Lockheed Martin</p>
+    <p>Nazionalità: USA</p>
+    <p>Dimensioni: Informazioni riservate</p>
+    <p>Velocità: Informazioni riservate</p>
+    <p>Armamento: Informazioni riservate</p>
+    <a href=https://www.youtube.com/watch?v=QNCluoPW-sA>Video youtube</a>
+  </div>
+  <div class="drone" id="drone8">
+    <img src="download (6).jpg" alt="Drone 8">
+    <p>Nome: TAI Anka</p>
+    <p>Produttore: Turkish Aerospace Industries</p>
+    <p>Nazionalità: Turchia</p>
+    <p>Dimensioni: 8m di lunghezza, 2.4m di altezza</p>
+    <p>Velocità: 217 km/h</p>
+    <p>Armamento: Missili Roketsan MAM-L, MAM-C</p>
+    <a href=https://www.youtube.com/watch?v=fAnxwJk0h10>Video youtube</a>
+  </div>
+  <div class="drone" id="drone9">
+    <img src="download (7).jpg" alt="Drone 9">
+    <p>Nome: MQ-1C Gray Eagle</p>
+    <p>Produttore: General Atomics Aeronautical Systems</p>
+    <p>Nazionalità: USA</p>
+    <p>Dimensioni: 8.9m di lunghezza, 2.1m di altezza</p>
+    <p>Velocità: 160 km/h</p>
+    <p>Armamento: Missili AGM-114 Hellfire, varie bombe</p>
+    <a href=https://www.youtube.com/watch?v=rzDjhnzyFnM>Video youtube</a>
+  </div>
+  <div class="drone" id="drone10">
+    <img src="download (8).jpg" alt="Drone 10">
+    <p>Nome: Eitan</p>
+    <p>Produttore: Israel Aerospace Industries</p>
+    <p>Nazionalità: Israele</p>
+    <p>Dimensioni: 14m di lunghezza, 26m di apertura alare</p>
+    <p>Velocità: 370 km/h</p>
+    <p>Armamento: Missili, bombe, apparecchiature di sorveglianza</p>
+    <a href=https://www.youtube.com/watch?v=vtBYWl_D-Rw>Video youtube</a>
+  </div>
+</div>
 
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5">
-          <div class="col-sm">
-            
-            <div class="card" style="width: 18rem;">
-              <img src="C:\Users\Alessandro\OneDrive\Immagini\HESA shahed-136.jpg">
-              <div class="card-body">
-                <h5 class="card-title">HESA Shahed-136</h5>
-                <p class="card-text">
-                    Produttore: Iran Aviation Industries Organization (IAIO) <br>
-                    Nazionalità: Iran <br> 
-                    Dimensioni: Lunghezza: 7,3 m; Apertura alare: 13 m <br>
-                    Velocità: Massima: 380 km/h <br>
-                    Armamento: Missile aria-terra Sadid-1 <br>
-                </p>
-                <a href="https://www.youtube.com/watch?v=YX68tGpU40U&ab_channel=AgasChannel">Video youtube</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm">
-            
-            <div class="card" style="width: 18rem;">
-                <img src="C:\Users\Alessandro\OneDrive\Immagini\General Atomics MQ-9 Reaper.jpg">
-                <div class="card-body">
-                  <h5 class="card-title">General Atomics MQ-9 Reaper</h5>
-                  <p class="card-text">
-                    Produttore: General Atomics Aeronautical Systems, Inc. <br>
-                    Nazionalità: Stati Uniti <br>
-                    Dimensioni: Lunghezza: 11 m; Apertura alare: 20 m <br>
-                    Velocità: Massima: 482 km/h <br>
-                    Armamento: Missili Hellfire, bombe a guida laser, munizioni guidate da GPS <br>
-                  </p>
-                  <a href="https://www.youtube.com/watch?v=NW1Mrnqycqw&ab_channel=DefenseNow">Video youtube</a>
-              </div>
-            </div>
-
-
-          </div>
-
-          <div class="col-sm">
-            
-            <div class="card" style="width: 18rem;">
-                <img src="C:\Users\Alessandro\OneDrive\Immagini\HESA shahed-136.jpg">
-                <div class="card-body">
-                  <h5 class="card-title">General Atomics MQ-9 Reape</h5>
-                  <p class="card-text">
-                    Produttore: General Atomics Aeronautical Systems, Inc. <br>
-                    Nazionalità: Stati Uniti <br>
-                    Dimensioni: Lunghezza: 11 m; Apertura alare: 20 m <br>
-                    Velocità: Massima: 482 km/h <br>
-                    Armamento: Missili Hellfire, bombe a guida laser, munizioni guidate da GPS <br>
-                  </p>
-                  <a href="https://www.youtube.com/watch?v=NW1Mrnqycqw&ab_channel=DefenseNow">Video youtube</a>
-              </div>
-            </div>
-
-
-          </div>
-
-          <div class="col-sm">
-            
-            <div class="card" style="width: 18rem;">
-                <img src="C:\Users\Alessandro\OneDrive\Immagini\HESA shahed-136.jpg">
-                <div class="card-body">
-                  <h5 class="card-title">General Atomics MQ-9 Reape</h5>
-                  <p class="card-text">
-                    Produttore: General Atomics Aeronautical Systems, Inc. <br>
-                    Nazionalità: Stati Uniti <br>
-                    Dimensioni: Lunghezza: 11 m; Apertura alare: 20 m <br>
-                    Velocità: Massima: 482 km/h <br>
-                    Armamento: Missili Hellfire, bombe a guida laser, munizioni guidate da GPS <br>
-                  </p>
-                  <a href="https://www.youtube.com/watch?v=NW1Mrnqycqw&ab_channel=DefenseNow">Video youtube</a>
-              </div>
-            </div>
-
-
-          </div>
-          <div class="col-sm">
-            
-            <div class="card" style="width: 18rem;">
-                <img src="C:\Users\Alessandro\OneDrive\Immagini\HESA shahed-136.jpg">
-                <div class="card-body">
-                  <h5 class="card-title">General Atomics MQ-9 Reape</h5>
-                  <p class="card-text">
-                    Produttore: General Atomics Aeronautical Systems, Inc. <br>
-                    Nazionalità: Stati Uniti <br>
-                    Dimensioni: Lunghezza: 11 m; Apertura alare: 20 m <br>
-                    Velocità: Massima: 482 km/h <br>
-                    Armamento: Missili Hellfire, bombe a guida laser, munizioni guidate da GPS <br>
-                  </p>
-                  <a href="https://www.youtube.com/watch?v=NW1Mrnqycqw&ab_channel=DefenseNow">Video youtube</a>
-              </div>
-            </div>
-
-
-          </div>
-          <div class="col-sm">
-            
-            <div class="card" style="width: 18rem;">
-                <img src="C:\Users\Alessandro\OneDrive\Immagini\HESA shahed-136.jpg">
-                <div class="card-body">
-                  <h5 class="card-title">General Atomics MQ-9 Reape</h5>
-                  <p class="card-text">
-                    Produttore: General Atomics Aeronautical Systems, Inc. <br>
-                    Nazionalità: Stati Uniti <br>
-                    Dimensioni: Lunghezza: 11 m; Apertura alare: 20 m <br>
-                    Velocità: Massima: 482 km/h <br>
-                    Armamento: Missili Hellfire, bombe a guida laser, munizioni guidate da GPS <br>
-                  </p>
-                  <a href="https://www.youtube.com/watch?v=NW1Mrnqycqw&ab_channel=DefenseNow">Video youtube</a>
-              </div>
-            </div>
-
-
-          </div>
-          <div class="col-sm">
-            
-            <div class="card" style="width: 18rem;">
-                <img src="C:\Users\Alessandro\OneDrive\Immagini\HESA shahed-136.jpg">
-                <div class="card-body">
-                  <h5 class="card-title">General Atomics MQ-9 Reape</h5>
-                  <p class="card-text">
-                    Produttore: General Atomics Aeronautical Systems, Inc. <br>
-                    Nazionalità: Stati Uniti <br>
-                    Dimensioni: Lunghezza: 11 m; Apertura alare: 20 m <br>
-                    Velocità: Massima: 482 km/h <br>
-                    Armamento: Missili Hellfire, bombe a guida laser, munizioni guidate da GPS <br>
-                  </p>
-                  <a href="https://www.youtube.com/watch?v=NW1Mrnqycqw&ab_channel=DefenseNow">Video youtube</a>
-              </div>
-            </div>
-
-
-          </div>
-          <div class="col-sm">
-            
-            <div class="card" style="width: 18rem;">
-                <img src="C:\Users\Alessandro\OneDrive\Immagini\HESA shahed-136.jpg">
-                <div class="card-body">
-                  <h5 class="card-title">General Atomics MQ-9 Reape</h5>
-                  <p class="card-text">
-                    Produttore: General Atomics Aeronautical Systems, Inc. <br>
-                    Nazionalità: Stati Uniti <br>
-                    Dimensioni: Lunghezza: 11 m; Apertura alare: 20 m <br>
-                    Velocità: Massima: 482 km/h <br>
-                    Armamento: Missili Hellfire, bombe a guida laser, munizioni guidate da GPS <br>
-                  </p>
-                  <a href="https://www.youtube.com/watch?v=NW1Mrnqycqw&ab_channel=DefenseNow">Video youtube</a>
-              </div>
-            </div>
-
-
-          </div>
-          <div class="col-sm">
-            
-            <div class="card" style="width: 18rem;">
-                <img src="C:\Users\Alessandro\OneDrive\Immagini\HESA shahed-136.jpg">
-                <div class="card-body">
-                  <h5 class="card-title">General Atomics MQ-9 Reape</h5>
-                  <p class="card-text">
-                    Produttore: General Atomics Aeronautical Systems, Inc. <br>
-                    Nazionalità: Stati Uniti <br>
-                    Dimensioni: Lunghezza: 11 m; Apertura alare: 20 m <br>
-                    Velocità: Massima: 482 km/h <br>
-                    Armamento: Missili Hellfire, bombe a guida laser, munizioni guidate da GPS <br>
-                  </p>
-                  <a href="https://www.youtube.com/watch?v=NW1Mrnqycqw&ab_channel=DefenseNow">Video youtube</a>
-              </div>
-            </div>
-
-
-          </div>
-
-          <div class="col-sm">
-            
-            <div class="card" style="width: 18rem;">
-                <img src="C:\Users\Alessandro\OneDrive\Immagini\HESA shahed-136.jpg">
-                <div class="card-body">
-                  <h5 class="card-title">General Atomics MQ-9 Reape</h5>
-                  <p class="card-text">
-                    Produttore: General Atomics Aeronautical Systems, Inc. <br>
-                    Nazionalità: Stati Uniti <br>
-                    Dimensioni: Lunghezza: 11 m; Apertura alare: 20 m <br>
-                    Velocità: Massima: 482 km/h <br>
-                    Armamento: Missili Hellfire, bombe a guida laser, munizioni guidate da GPS <br>
-                  </p>
-                  <a href="https://www.youtube.com/watch?v=NW1Mrnqycqw&ab_channel=DefenseNow">Video youtube</a>
-              </div>
-            </div>
-
-
-          </div>
-
-          <div class="col-sm">
-            
-            <div class="card" style="width: 18rem;">
-                <img src="C:\Users\Alessandro\OneDrive\Immagini\HESA shahed-136.jpg">
-                <div class="card-body">
-                  <h5 class="card-title">General Atomics MQ-9 Reape</h5>
-                  <p class="card-text">
-                    Produttore: General Atomics Aeronautical Systems, Inc. <br>
-                    Nazionalità: Stati Uniti <br>
-                    Dimensioni: Lunghezza: 11 m; Apertura alare: 20 m <br>
-                    Velocità: Massima: 482 km/h <br>
-                    Armamento: Missili Hellfire, bombe a guida laser, munizioni guidate da GPS <br>
-                  </p>
-                  <a href="https://www.youtube.com/watch?v=NW1Mrnqycqw&ab_channel=DefenseNow">Video youtube</a>
-              </div>
-            </div>
-
-
-          </div>
-
-          <div class="col-sm">
-            
-            <div class="card" style="width: 18rem;">
-                <img src="C:\Users\Alessandro\OneDrive\Immagini\HESA shahed-136.jpg">
-                <div class="card-body">
-                  <h5 class="card-title">General Atomics MQ-9 Reape</h5>
-                  <p class="card-text">
-                    Produttore: General Atomics Aeronautical Systems, Inc. <br>
-                    Nazionalità: Stati Uniti <br>
-                    Dimensioni: Lunghezza: 11 m; Apertura alare: 20 m <br>
-                    Velocità: Massima: 482 km/h <br>
-                    Armamento: Missili Hellfire, bombe a guida laser, munizioni guidate da GPS <br>
-                  </p>
-                  <a href="https://www.youtube.com/watch?v=NW1Mrnqycqw&ab_channel=DefenseNow">Video youtube</a>
-              </div>
-            </div>
-
-
-          </div>
-
-          <div class="col-sm">
-            
-            <div class="card" style="width: 18rem;">
-                <img src="C:\Users\Alessandro\OneDrive\Immagini\HESA shahed-136.jpg">
-                <div class="card-body">
-                  <h5 class="card-title">General Atomics MQ-9 Reape</h5>
-                  <p class="card-text">
-                    Produttore: General Atomics Aeronautical Systems, Inc. <br>
-                    Nazionalità: Stati Uniti <br>
-                    Dimensioni: Lunghezza: 11 m; Apertura alare: 20 m <br>
-                    Velocità: Massima: 482 km/h <br>
-                    Armamento: Missili Hellfire, bombe a guida laser, munizioni guidate da GPS <br>
-                  </p>
-                  <a href="https://www.youtube.com/watch?v=NW1Mrnqycqw&ab_channel=DefenseNow">Video youtube</a>
-              </div>
-            </div>
-
-
-          </div>
-
-          <div class="col-sm">
-            
-            <div class="card" style="width: 18rem;">
-                <img src="C:\Users\Alessandro\OneDrive\Immagini\HESA shahed-136.jpg">
-                <div class="card-body">
-                  <h5 class="card-title">General Atomics MQ-9 Reape</h5>
-                  <p class="card-text">
-                    Produttore: General Atomics Aeronautical Systems, Inc. <br>
-                    Nazionalità: Stati Uniti <br>
-                    Dimensioni: Lunghezza: 11 m; Apertura alare: 20 m <br>
-                    Velocità: Massima: 482 km/h <br>
-                    Armamento: Missili Hellfire, bombe a guida laser, munizioni guidate da GPS <br>
-                  </p>
-                  <a href="https://www.youtube.com/watch?v=NW1Mrnqycqw&ab_channel=DefenseNow">Video youtube</a>
-              </div>
-            </div>
-
-
-          </div>
-
-          <div class="col-sm">
-            
-            <div class="card" style="width: 18rem;">
-                <img src="C:\Users\Alessandro\OneDrive\Immagini\HESA shahed-136.jpg">
-                <div class="card-body">
-                  <h5 class="card-title">General Atomics MQ-9 Reape</h5>
-                  <p class="card-text">
-                    Produttore: General Atomics Aeronautical Systems, Inc. <br>
-                    Nazionalità: Stati Uniti <br>
-                    Dimensioni: Lunghezza: 11 m; Apertura alare: 20 m <br>
-                    Velocità: Massima: 482 km/h <br>
-                    Armamento: Missili Hellfire, bombe a guida laser, munizioni guidate da GPS <br>
-                  </p>
-                  <a href="https://www.youtube.com/watch?v=NW1Mrnqycqw&ab_channel=DefenseNow">Video youtube</a>
-              </div>
-            </div>
-
-
-          </div>
-
-          <div class="col-sm">
-            
-            <div class="card" style="width: 18rem;">
-           
-              </div>
-            </div>
-
-
-          </div>
-          <div class="col-sm">
-            
-            <div class="card" style="width: 18rem;">
-             
-              </div>
-            </div>
-
-
-          </div>
-          <div class="col-sm">
-            
-            <div class="card" style="width: 18rem;">
-              
-              </div>
-            </div>
-
-
-          </div>
-        </div>
-      </div>
-
-        
-    
-      
-    
-    
-    
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
+</body>
 </html>
+
