@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generatore di Frasi</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    p {
+        font-size: 18px;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <button id="generate">Genera Frase</button>
+    <p id="output"></p>
+</div>
+
+<script>
+    var subjects = ["Il gatto", "La tartaruga", "Il cane", "Il leone", "Il pinguino", "Il serpente", "Il canguro", "La volpe", "Il panda", "Il rinoceronte"];
+    var verbs = ["salta", "corre", "dorme", "mangia", "nuota", "volta", "guarda", "canta", "cammina", "gioca"];
+    var objects = ["la palla", "il libro", "la mela", "il computer", "il gioco", "la pizza", "il film", "il telefono", "il bicchiere", "la chitarra"];
+    var adjectives = ["rosso", "grande", "piccolo", "veloce", "lento", "felice", "triste", "intelligente", "simpatico", "forte"];
+
+    function generateRandomSentence() {
+        var subject = subjects[Math.floor(Math.random() * subjects.length)];
+        var verb = verbs[Math.floor(Math.random() * verbs.length)];
+        var object = objects[Math.floor(Math.random() * objects.length)];
+        var adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+
+        var sentence = subject + " " + verb + " " + adjective + " " + object + ".";
+        return sentence;
+    }
+
+    document.getElementById("generate").addEventListener("click", function() {
+        var sentence = generateRandomSentence();
+        document.getElementById("output").textContent = sentence;
+    });
+</script>
+
+</body>
+</html>
