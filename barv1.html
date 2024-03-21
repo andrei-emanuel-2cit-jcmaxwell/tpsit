@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu del Bar</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+    }
+    #menuContainer {
+        display: grid;
+        place-items: center;
+        height: 100vh;
+    }
+    button {
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+    .hidden {
+        display: none;
+    }
+    #drinkList {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        max-width: 300px;
+        text-align: center;
+    }
+    h3 {
+        margin-top: 0;
+    }
+    ul {
+        padding: 0;
+        list-style-type: none;
+    }
+    li {
+        margin: 5px 0;
+    }
+</style>
+</head>
+<body>
+
+<div id="menuContainer">
+    <div id="menuButtons">
+        <button id="instructions">Istruzioni</button>
+        <button id="showMenu">Mostra Menu Drink</button>
+        <button id="addOrder">Aggiungi Ordine</button>
+        <button id="deleteOrder">Elimina Ordine</button>
+        <button id="sendOrder">Invia Ordine</button>
+    </div>
+    <div id="drinkList" class="hidden">
+        <h3>Menu Drink</h3>
+        <ul id="menuItems">
+            <li>Gin Tonic</li>
+            <li>Mojito</li>
+            <li>Negroni</li>
+        </ul>
+    </div>
+</div>
+
+<div id="orderList" class="hidden">
+    <h3>Ordini</h3>
+    <ul id="ordersOutput"></ul>
+</div>
+
+<script>
+document.getElementById("instructions").addEventListener("click", function() {
+    alert("Ciao! Clicca su 'Mostra Menu Drink' per vedere il menu dei drink, quindi seleziona un drink e clicca su 'Aggiungi Ordine'. Puoi eliminare un ordine cliccando su 'Elimina Ordine'. Quando sei pronto per inviare l'ordine, clicca su 'Invia Ordine'.");
+});
+
+document.getElementById("showMenu").addEventListener("click", function() {
+    document.getElementById("drinkList").classList.remove("hidden");
+});
+
+document.getElementById("addOrder").addEventListener("click", function() {
+    var order = prompt("Inserisci l'ordinazione:");
+    if (order) {
+        var ordersOutput = document.getElementById("ordersOutput");
+        var listItem = document.createElement("li");
+        listItem.textContent = order;
+        ordersOutput.appendChild(listItem);
+        document.getElementById("orderList").classList.remove("hidden");
+    }
+});
+
+document.getElementById("deleteOrder").addEventListener("click", function() {
+    var orderToDelete = prompt("Inserisci l'ordinazione da eliminare:");
+    var orderItems = document.querySelectorAll("#ordersOutput li");
+    orderItems.forEach(function(item) {
+        if (item.textContent === orderToDelete) {
+            item.remove();
+        }
+    });
+});
+
+document.getElementById("sendOrder").addEventListener("click", function() {
+    alert("Il tuo ordine verrà gestito prima possibile. Grazie!");
+});
+</script>
+
+</body>
+</html>
