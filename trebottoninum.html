@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 Div con 100 numeri casuali</title>
+
+    <style>
+        .quadrato{
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .pink{
+            background-color: pink;
+        }
+
+        .blue{
+            background-color: rgb(97, 97, 211);
+        }
+
+        .green{
+            background-color: lightgreen;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="quadrato pink">1</div>
+
+    <button onclick="coloraPari()">Colora Pari</button>
+    <button onclick="coloraDispari()">Colora Dispari</button>
+    <button onclick="coloraPrimi()">Colora Primi</button>
+
+    <script>
+        let nc;
+        const divs = [];
+
+        for(let i = 0; i < 100; i++){
+            nc = Math.floor(Math.random() * 100);
+            const nuovoDiv = document.createElement("div");
+            nuovoDiv.className = "quadrato";
+            nuovoDiv.textContent = nc;
+            document.body.appendChild(nuovoDiv);
+            divs.push(nuovoDiv);
+        }
+
+        function resetColor() {
+            divs.forEach(div => {
+                div.classList.remove("pink", "blue", "green");
+            });
+        }
+
+        function coloraPari() {
+            resetColor();
+            divs.forEach(div => {
+                if (parseInt(div.textContent) % 2 === 0) {
+                    div.classList.add("pink");
+                }
+            });
+        }
+
+        function coloraDispari() {
+            resetColor();
+            divs.forEach(div => {
+                if (parseInt(div.textContent) % 2 !== 0) {
+                    div.classList.add("blue");
+                }
+            });
+        }
+
+        function isPrimo(num) {
+            if (num <= 1) return false;
+            if (num <= 3) return true;
+
+            if (num % 2 === 0 || num % 3 === 0) return false;
+
+            let i = 5;
+            while (i * i <= num) {
+                if (num % i === 0 || num % (i + 2) === 0) return false;
+                i += 6;
+            }
+
+            return true;
+        }
+
+        function coloraPrimi() {
+            resetColor();
+            divs.forEach(div => {
+                const num = parseInt(div.textContent);
+                if (isPrimo(num)) {
+                    div.classList.add("green");
+                }
+            });
+        }
+    </script>
+</body>
+</html>
