@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        #numbers {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        #generate-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #result-box {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Generatore di Numeri Casuali</h1>
+    <button id="generate-button">Genera Numero Casuale</button>
+    <div id="numbers"></div>
+    <div id="result-box"></div>
+
+    <script>
+        function updateNumbers() {
+            const numbersDiv = document.getElementById('numbers');
+            const resultBox = document.getElementById('result-box');
+            const randomNumber = Math.floor(Math.random() * 100) + 1;
+            
+            numbersDiv.textContent = `Numero Casuale: ${randomNumber}`;
+    
+            if (randomNumber % 2 === 0) {
+                resultBox.textContent = "Pari";
+            } else {
+                resultBox.textContent = "Dispari";
+            }
+        }
+
+        document.getElementById('generate-button').addEventListener('click', updateNumbers);
+    </script>
+</body>
+</html>
