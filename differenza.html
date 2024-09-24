@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        #numbers {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        #generate-button-1, #generate-button-2 {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .result-box {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Generatore di Numeri Casuali e Differenza</h1>
+    
+    <!-- Bottoni per generare i numeri -->
+    <button id="generate-button-1">Genera Numero 1</button>
+    <button id="generate-button-2">Genera Numero 2</button>
+    
+    <!-- Div per visualizzare i numeri -->
+    <div id="numbers-1">Numero 1: Non generato</div>
+    <div id="numbers-2">Numero 2: Non generato</div>
+    
+    <!-- Primo quadrato per numero pari o dispari -->
+    <div id="result-box-1" class="result-box">?</div>
+    
+    <!-- Secondo quadrato per la differenza tra i due numeri -->
+    <div id="result-box-2" class="result-box">Differenza: ?</div>
+
+    <script>
+        let number1 = null;
+        let number2 = null;
+
+        // Funzione per generare il primo numero e aggiornare il quadrato
+        function generateNumber1() {
+            number1 = Math.floor(Math.random() * 100) + 1;
+            document.getElementById('numbers-1').textContent = `Numero 1: ${number1}`;
+            
+            if (number1 % 2 === 0) {
+                document.getElementById('result-box-1').textContent = "Pari";
+            } else {
+                document.getElementById('result-box-1').textContent = "Dispari";
+            }
+            updateDifference();
+        }
+
+        // Funzione per generare il secondo numero e aggiornare la differenza
+        function generateNumber2() {
+            number2 = Math.floor(Math.random() * 100) + 1;
+            document.getElementById('numbers-2').textContent = `Numero 2: ${number2}`;
+            updateDifference();
+        }
+
+        // Funzione per aggiornare la differenza tra i due numeri
+        function updateDifference() {
+            if (number1 !== null && number2 !== null) {
+                const difference = Math.abs(number1 - number2);
+                document.getElementById('result-box-2').textContent = `Differenza: ${difference}`;
+            }
+        }
+
+        // Event listener per i bottoni
+        document.getElementById('generate-button-1').addEventListener('click', generateNumber1);
+        document.getElementById('generate-button-2').addEventListener('click', generateNumber2);
+    </script>
+</body>
+</html>
