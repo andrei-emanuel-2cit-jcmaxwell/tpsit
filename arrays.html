@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeri Primi</title>
+    <script>
+        // Funzione per verificare se un numero è primo
+        function isPrime(num) {
+            if (num < 2) {
+                return false;
+            }
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // Funzione per generare numeri primi
+        function generatePrimes(limit) {
+            const primes = [];
+           
+            for (let i = 2; i <= limit; i++) {
+                if (isPrime(i)) {
+                    primes.push(i);
+                }
+            }
+           
+            return primes;
+        }
+
+        // Funzione per mostrare i numeri primi sulla pagina
+        function displayPrimes() {
+            const maxNumber = document.getElementById("limit").value;
+            const primeNumbers = generatePrimes(maxNumber);
+            const primesContainer = document.getElementById("primeNumbers");
+
+            // Svuota l'area di visualizzazione dei numeri primi
+            primesContainer.innerHTML = '';
+
+            // Aggiungi i numeri primi generati
+            primeNumbers.forEach(prime => {
+                const listItem = document.createElement("li");
+                listItem.textContent = prime;
+                primesContainer.appendChild(listItem);
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Generatore di Numeri Primi</h1>
+    
+    <label for="limit">Inserisci un numero limite:</label>
+    <input type="number" id="limit" value="100">
+    <button onclick="displayPrimes()">Genera Numeri Primi</button>
+
+    <h2>Numeri Primi:</h2>
+    <ul id="primeNumbers"></ul>
+</body>
+</html>
