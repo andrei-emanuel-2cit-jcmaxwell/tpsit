@@ -1,0 +1,332 @@
+<!DOCTYPE html>  
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Grigia</title>
+    <style>
+        body {
+            background-color: rgb(87, 87, 87);
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin-top: 20%;
+        }
+        #tavolo {
+            height: 500px;
+            width: 300px;
+            background-color: rgb(101 67 33);
+            border: 2px solid #5a3e28;
+            border-radius: 10px;
+            position: relative;
+            left: 1200px;
+            bottom: -200px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        .centered {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        #v1 {
+            height: 100px;
+            width: 150px;
+            background-color: #4e73df;
+            border: 2px solid #1f3a77;
+            border-radius: 8px;
+            position: relative;
+            left: 1350px;
+            bottom: 443px;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        #g1 {
+            height: 100px;
+            width: 100px;
+            background-color: #4e73df;
+            border: 2px solid #1f3a77;
+            border-radius: 8px;
+            position: relative;
+            left: 1200px;
+            bottom: 550px;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        #g2 {
+            height: 100px;
+            width: 100px;
+            background-color: #e74a3b;
+            border: 2px solid #9f1e11;
+            border-radius: 8px;
+            position: relative;
+            left: 1200px;
+            bottom: -30px;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        #v2 {
+            height: 100px;
+            width: 150px;
+            background-color: #e74a3b;
+            border: 2px solid #9f1e11;
+            border-radius: 8px;
+            position: relative;
+            left: 1350px;
+            bottom: 72px;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        #box-domande {
+            height: 100px;
+            width: 450px;
+            background-color: white;
+            border: 2px solid #333;
+            position: relative;
+            left: 500px;
+            bottom: 525px;
+            color: black;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        #risposte-g1 {
+            height: 100px;
+            width: 350px;
+            background-color: #4e73df;
+            border: 2px solid #1f3a77;
+            position: relative;
+            left: 550px;
+            bottom: 770px;
+            color: black;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        #risposte-g2 {
+            height: 100px;
+            width: 350px;
+            background-color: #e74a3b;
+            border: 2px solid #9f1e11;
+            position: relative;
+            left: 550px;
+            bottom: 580px;
+            color: black;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        #timer {
+            height: 100px;
+            width: 100px;
+            background-color: #9b59b6;
+            border: 2px solid #6a4e92;
+            border-radius: 8px;
+            position: relative;
+            left: 350px;
+            bottom: 835px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+        }
+        p {
+            margin: 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        label {
+            font-size: 14px;
+        }
+        input {
+            font-size: 14px;
+            padding: 5px;
+            margin-top: 5px;
+            width: 80%;
+            border-radius: 4px;
+            border: 2px solid #ccc;
+            box-sizing: border-box;
+        }
+        #start {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #2c3e50;
+            color: white;
+            border: 2px solid #34495e;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        #start:hover {
+            background-color: #34495e;
+        }
+    </style>
+</head>
+<body>
+    <!-- Pulsante Start -->
+    <div id="start" onclick="Startgame()">Inizia Partita</div>
+    
+    <!-- Elementi gioco -->
+    <div id="tavolo"></div>
+    <div id="v1" class="centered">
+        <p>Vite:</p>
+        <p id="viteg1">5</p>
+    </div>
+    <div id="g1" class="centered">
+        <p>Giocatore 1</p>
+    </div>
+    <div id="g2" class="centered">
+        <p>Giocatore 2</p>
+    </div>
+    <div id="v2" class="centered">
+        <p>Vite:</p>
+        <p id="viteg2">5</p>
+    </div>
+    <div id="box-domande" class="centered">
+        <p>Domanda:</p>
+        <p id="d"></p>
+    </div>
+    <div id="risposte-g1" class="centered">
+        <label for="risp-g1">Risposta Giocatore 1:</label>
+        <input type="text" id="risp-g1" name="risp-g1" placeholder="Inserisci la risposta">
+    </div>
+    <div id="risposte-g2" class="centered">
+        <label for="risp-g2">Risposta Giocatore 2:</label>
+        <input type="text" id="risp-g2" name="risp-g2" placeholder="Inserisci la risposta">
+    </div>
+    <div id="timer">
+        <p id="t"></p>
+    </div>
+
+    <script>
+        let timer;
+        let n = 30;
+        let v1 = 5;
+        let v2 = 5;
+        let currentQuestion;
+        const domande = [
+            { question: "Qual è la capitale d'Italia?", answer: "Roma" },
+            { question: "Qual è il colore del cielo?", answer: "Blu" },
+            { question: "Quante gambe ha un cane?", answer: "4" },
+            { question: "Quante stagioni ci sono in un anno?", answer: "4" },
+            { question: "Qual è l'elemento chimico con il simbolo O?", answer: "Ossigeno" },
+            { question: "Quante dita ha una mano?", answer: "5" },
+            { question: "Chi ha dipinto la Gioconda?", answer: "Leonardo" },
+            { question: "Quanto fa 2+2?", answer: "4" },
+            { question: "Qual è la moneta usata in Giappone?", answer: "Yen" },
+            { question: "Qual è il pianeta più vicino al sole?", answer: "Mercurio" },
+            { question: "In quale stagione dell'anno cade il Natale?", answer: "Inverno" },
+            { question: "Qual è la lingua ufficiale della Spagna?", answer: "Spagnolo" },
+            { question: "Quanto fa 3+5?", answer: "8" },
+            { question: "Quanti giorni ha una settimana?", answer: "7" },
+            { question: "Qual è il frutto che dà il succo d'arancia?", answer: "Arancia" },
+            { question: "Qual è l'animale che è il simbolo dell'Australia?", answer: "Canguro" },
+            { question: "Qual è il simbolo chimico dell'acqua?", answer: "H2O" },
+            { question: "Chi ha scritto 'Il Piccolo Principe'?", answer: "Saint-Exupéry" },
+            { question: "Quanti colori ha l'arcobaleno?", answer: "7" },
+            { question: "In quale mese inizia l'estate?", answer: "Giugno" },
+            { question: "Qual è il nome del famoso topo della Disney?", answer: "Topolino" },
+            { question: "Chi ha creato l'opera one piece ? ", answer: "Oda" },
+            { question: "In quale paese si trova la Torre Eiffel?", answer: "Francia" },
+            { question: "Che forma ha la terra?", answer: "Sferica" },
+            { question: "Chi è il presidente degli Stati Uniti?", answer: "Joe Biden" },
+            { question: "In che mese è festeggiato Halloween?", answer: "Ottobre" }
+        ];
+    
+        function Startgame() {
+            if (timer) {
+                clearInterval(timer);
+            }
+    
+            const randomIndex = Math.floor(Math.random() * domande.length);
+            currentQuestion = domande[randomIndex];
+            document.getElementById("d").innerText = currentQuestion.question;
+    
+            n = 30;
+            document.getElementById("t").textContent = n;
+            timer = setInterval(tempo, 1000);
+        }
+    
+        function tempo() {
+            if (n > 0) {
+                document.getElementById("t").textContent = n;
+                n--;
+            } else {
+                clearInterval(timer);
+                alert("Tempo scaduto! Nessuno ha risposto.");
+                resetGame();
+            }
+        }
+    
+        document.getElementById("risp-g1").addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                checkAnswer(1, this.value);
+                this.value = ""; // Pulisce il campo di input
+            }
+        });
+    
+        document.getElementById("risp-g2").addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                checkAnswer(2, this.value);
+                this.value = ""; // Pulisce il campo di input
+            }
+        });
+    
+        function checkAnswer(player, answer) {
+            if (answer.toLowerCase() === currentQuestion.answer.toLowerCase()) {
+                let damage = 0;
+                let weapon = "";
+    
+                if (n >= 25) {
+                    damage = 3;
+                    weapon = "pompa";
+                } else if (n >= 15) {
+                    damage = 2;
+                    weapon = "pistola";
+                } else {
+                    damage = 1;
+                    weapon = "coltellino";
+                }
+    
+                if (player === 1) {
+                    v2 -= damage;
+                    alert(`Giocatore 1 ha risposto correttamente utilizzando una ${weapon}! Ha tolto ${damage} vite a Giocatore 2.`);
+                } else {
+                    v1 -= damage;
+                    alert(`Giocatore 2 ha risposto correttamente utilizzando una ${weapon}! Ha tolto ${damage} vite a Giocatore 1.`);
+                }
+    
+                clearInterval(timer); // Blocca il timer solo in caso di risposta corretta
+                updateLives();
+    
+                if (v1 <= 0 || v2 <= 0) {
+                    alert(v1 <= 0 ? "Giocatore 2 vince!" : "Giocatore 1 vince!");
+                    resetGame();
+                } else {
+                    Startgame(); // Passa alla domanda successiva
+                }
+            } else {
+                alert(`Risposta errata, ${player === 1 ? "Giocatore 1" : "Giocatore 2"}`);
+            }
+        }
+    
+        function updateLives() {
+            document.getElementById("viteg1").textContent = v1;
+            document.getElementById("viteg2").textContent = v2;
+        }
+    
+        function resetGame() {
+            v1 = v2 = 5;
+            updateLives();
+            document.getElementById("d").textContent = "Premi 'Inizia Partita' per ricominciare.";
+        }
+    </script>
+    
+</body>
+</html>
