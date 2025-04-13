@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progetto di Rete Aziendale</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .upload-area {
+            border: 2px dashed #0d6efd;
+            padding: 30px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            background-color: #f8f9fa;
+        }
+        .address-table th {
+            background-color: #0d6efd;
+            color: white;
+        }
+        .material-table th {
+            background-color: #198754;
+            color: white;
+        }
+        h2 {
+            border-bottom: 2px solid #dee2e6;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        #previewImage {
+            max-width: 100%;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <h1 class="text-center mb-5">Progetto di Rete Aziendale</h1>
+        
+        <!-- Descrizione del progetto -->
+        <section>
+            <h2>Descrizione del Progetto</h2>
+            <p>Questo progetto prevede la realizzazione di una rete aziendale completa per un ufficio di grandi dimensioni composto da:</p>
+            <ul>
+                <li>25 scrivanie per dipendenti</li>
+                <li>2 scrivanie per tecnici</li>
+                <li>1 stampante di rete multifunzione</li>
+                <li>3 telecamere di sorveglianza standard + 1 telecamera 180°</li>
+                <li>2 access point WiFi professionali</li>
+                <li>2 ripetitori di segnale ad alta potenza</li>
+                <li>1 server aziendale rackmount</li>
+            </ul>
+            <p>La infrastruttura di rete è stata progettata per garantire copertura totale, alta affidabilità e prestazioni ottimali in ogni area dell'ufficio, con particolare attenzione alla qualità del segnale wireless grazie all'impiego di ripetitori professionali.</p>
+        </section>
+        
+        <!-- Materiali necessari -->
+        <section>
+            <h2>Materiali Necessari</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered material-table">
+                    <thead>
+                        <tr>
+                            <th>Quantità</th>
+                            <th>Tipologia</th>
+                            <th>Descrizione</th>
+                            <th>Prezzo Unitario</th>
+                            <th>Prezzo Totale</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Router</td>
+                            <td>Ubiquiti UniFi Dream Machine Pro</td>
+                            <td>€379,00</td>
+                            <td>€379,00</td>
+                            <td><a href="https://store.ui.com/eu/en/pro/products/udm-pro" target="_blank">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Switch</td>
+                            <td>Ubiquiti UniFi Switch Pro 24 PoE</td>
+                            <td>€699,00</td>
+                            <td>€1.398,00</td>
+                            <td><a href="https://store.ui.com/eu/en/pro/products/usw-pro-24-poe" target="_blank">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Access Point</td>
+                            <td>Ubiquiti UniFi 6 Enterprise</td>
+                            <td>€199,00</td>
+                            <td>€398,00</td>
+                            <td><a href="https://store.ui.com/eu/en/pro/products/u6-enterprise" target="_blank">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Ripetitore</td>
+                            <td>Ubiquiti UniFi Building-to-Building Bridge</td>
+                            <td>€499,00</td>
+                            <td>€998,00</td>
+                            <td><a href="https://store.ui.com/eu/en/pro/products/ubuilding-to-building-bridge" target="_blank">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Server</td>
+                            <td>Dell PowerEdge R350 Rack Server</td>
+                            <td>€2.999,00</td>
+                            <td>€2.999,00</td>
+                            <td><a href="https://www.dell.com/it-it/shop/server-poweredge-r350/spd/poweredge-r350" target="_blank">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Stampante</td>
+                            <td>HP Color LaserJet Enterprise MFP M680dn</td>
+                            <td>€1.299,00</td>
+                            <td>€1.299,00</td>
+                            <td><a href="https://www.hp.com/it-it/shop/hp-color-laserjet-enterprise-mfp-m680dn-4xy94a.html" target="_blank">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Telecamera standard</td>
+                            <td>Ubiquiti UniFi G4 Pro</td>
+                            <td>€449,00</td>
+                            <td>€1.347,00</td>
+                            <td><a href="https://store.ui.com/eu/en/pro/products/unifi-protect-g4-pro" target="_blank">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Telecamera 180°</td>
+                            <td>Ubiquiti UniFi G4 PTZ</td>
+                            <td>€999,00</td>
+                            <td>€999,00</td>
+                            <td><a href="https://store.ui.com/eu/en/pro/products/unifi-protect-g4-ptz" target="_blank">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td>30</td>
+                            <td>Cavo Ethernet</td>
+                            <td>Cavo di rete CAT6A 5m schermato</td>
+                            <td>€14,90</td>
+                            <td>€447,00</td>
+                            <td><a href="https://www.amazon.it/UGREEN-Network-Ethernet-RJ45-Shielded/dp/B01LXP5TFO/" target="_blank">Link</a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" class="text-end fw-bold">Totale</td>
+                            <td class="fw-bold">€10.264,00</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <!-- Area per inserire lo schema personalizzato -->
+        <section>
+            <h2>Schema di Rete Personalizzato</h2>
+            <div class="upload-area">
+                <h4>Carica il tuo schema di rete</h4>
+                <p class="text-muted">Carica un'immagine del tuo schema di rete per illustrare il funzionamento della configurazione</p>
+                
+                <form id="uploadForm">
+                    <div class="mb-3">
+                        <input class="form-control" type="file" id="schemaUpload" accept="image/*">
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="previewImage()">Anteprima</button>
+                </form>
+                
+                <img id="previewImage" alt="Anteprima schema di rete">
+                
+                <div class="mt-4">
+                    <h5>Spiegazione dello schema</h5>
+                    <textarea class="form-control" rows="5" placeholder="Inserisci qui la spiegazione del tuo schema di rete..."></textarea>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Piano di indirizzamento IP -->
+        <section>
+            <h2>Piano di Indirizzamento IP</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered address-table">
+                    <thead>
+                        <tr>
+                            <th>Dispositivo/Gruppo</th>
+                            <th>Indirizzo IP</th>
+                            <th>Subnet Mask</th>
+                            <th>Gateway</th>
+                            <th>Range IP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Gateway (Router)</td>
+                            <td>192.168.1.1</td>
+                            <td>255.255.255.0</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Server</td>
+                            <td>192.168.1.10</td>
+                            <td>255.255.255.0</td>
+                            <td>192.168.1.1</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Access Point 1</td>
+                            <td>192.168.1.20</td>
+                            <td>255.255.255.0</td>
+                            <td>192.168.1.1</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Access Point 2</td>
+                            <td>192.168.1.21</td>
+                            <td>255.255.255.0</td>
+                            <td>192.168.1.1</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Ripetitore 1</td>
+                            <td>192.168.1.35</td>
+                            <td>255.255.255.0</td>
+                            <td>192.168.1.1</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Ripetitore 2</td>
+                            <td>192.168.1.36</td>
+                            <td>255.255.255.0</td>
+                            <td>192.168.1.1</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Stampante</td>
+                            <td>192.168.1.30</td>
+                            <td>255.255.255.0</td>
+                            <td>192.168.1.1</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Telecamere</td>
+                            <td>192.168.1.40-43</td>
+                            <td>255.255.255.0</td>
+                            <td>192.168.1.1</td>
+                            <td>192.168.1.40-49</td>
+                        </tr>
+                        <tr>
+                            <td>Scrivanie dipendenti</td>
+                            <td>192.168.1.50-76</td>
+                            <td>255.255.255.0</td>
+                            <td>192.168.1.1</td>
+                            <td>192.168.1.50-79</td>
+                        </tr>
+                        <tr>
+                            <td>Scrivanie tecnici</td>
+                            <td>192.168.1.80-81</td>
+                            <td>255.255.255.0</td>
+                            <td>192.168.1.1</td>
+                            <td>192.168.1.80-89</td>
+                        </tr>
+                        <tr>
+                            <td>DHCP Range</td>
+                            <td>-</td>
+                            <td>255.255.255.0</td>
+                            <td>192.168.1.1</td>
+                            <td>192.168.1.100-199</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <footer class="mt-5 pt-3 text-muted text-center">
+            <p>Progetto di Rete Aziendale - Realizzato con Bootstrap 5</p>
+            <p>Ultimo aggiornamento: aprile 2023</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function previewImage() {
+            const fileInput = document.getElementById('schemaUpload');
+            const preview = document.getElementById('previewImage');
+            
+            if (fileInput.files && fileInput.files[0]) {
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                }
+                
+                reader.readAsDataURL(fileInput.files[0]);
+            }
+        }
+    </script>
+</body>
+</html>
