@@ -5,319 +5,674 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Progetto di Rete Aziendale</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-bg: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .card-custom {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            margin-bottom: 25px;
+        }
+        
+        .card-custom:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-header-custom {
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 15px 15px 0 0 !important;
+            padding: 1.2rem;
+        }
+        
+        .table-custom th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
         .schema-container {
-            border: 2px solid #0d6efd;
-            padding: 20px;
-            border-radius: 5px;
+            border: 2px solid var(--secondary-color);
+            padding: 25px;
+            border-radius: 15px;
             margin-bottom: 30px;
-            background-color: #f8f9fa;
-            text-align: center;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
-        .address-table th {
-            background-color: #0d6efd;
-            color: white;
-        }
-        .material-table th {
-            background-color: #198754;
-            color: white;
-        }
-        h2 {
-            border-bottom: 2px solid #dee2e6;
-            padding-bottom: 10px;
-            margin-top: 30px;
-        }
+        
         #schemaImage {
             max-width: 100%;
             margin: 20px 0;
-            border: 1px solid #ddd;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 1px solid #eee;
         }
-        .schema-description {
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .total-box {
             background-color: white;
-            padding: 15px;
-            border-radius: 5px;
-            margin-top: 20px;
+            border-left: 5px solid var(--accent-color);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
-        .editable-section {
-            background-color: #f8f9fa;
-            border: 2px dashed #6c757d;
-            padding: 20px;
-            margin-bottom: 30px;
-            min-height: 200px;
+        
+        .nav-pills .nav-link.active {
+            background-color: var(--secondary-color);
+        }
+        
+        .nav-pills .nav-link {
+            color: var(--primary-color);
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+        
+        .badge-custom {
+            background-color: var(--accent-color);
         }
     </style>
 </head>
 <body>
-    <div class="container py-5">
-        <h1 class="text-center mb-5">Progetto di Rete Aziendale</h1>
-        
-        <!-- Descrizione del progetto -->
-        <section>
-            <h2>Descrizione del Progetto</h2>
-            <p>Questo progetto prevede la realizzazione di una rete aziendale completa per un ufficio di grandi dimensioni composto da:</p>
-            <ul>
-                <li>25 scrivanie per dipendenti</li>
-                <li>2 scrivanie per tecnici</li>
-                <li>1 stampante di rete multifunzione</li>
-                <li>3 telecamere di sorveglianza standard + 1 telecamera 180°</li>
-                <li>2 access point WiFi professionali</li>
-                <li>1 access point per rete ospiti</li>
-                <li>2 ripetitori di segnale ad alta potenza</li>
-                <li>1 server aziendale rackmount</li>
-            </ul>
-            <p>La infrastruttura di rete è stata progettata per garantire copertura totale, alta affidabilità e prestazioni ottimali in ogni area dell'ufficio.</p>
-        </section>
-        
-        <!-- Materiali necessari -->
-        <section>
-            <h2>Materiali Necessari</h2>
-            <div class="table-responsive">
-                <table class="table table-bordered material-table">
-                    <thead>
-                        <tr>
-                            <th>Quantità</th>
-                            <th>Tipologia</th>
-                            <th>Descrizione</th>
-                            <th>Prezzo Unitario</th>
-                            <th>Prezzo Totale</th>
-                            <th>Link</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Router</td>
-                            <td>Ubiquiti UniFi Dream Machine Pro</td>
-                            <td>€379,00</td>
-                            <td>€379,00</td>
-                            <td><a href="https://eu.store.ui.com/collections/unifi-network-routing-switching/products/udm-pro" target="_blank">Link</a></td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Switch</td>
-                            <td>Ubiquiti UniFi Switch Pro 24 PoE</td>
-                            <td>€699,00</td>
-                            <td>€1.398,00</td>
-                            <td><a href="https://eu.store.ui.com/collections/unifi-network-switching/products/usw-pro-24-poe" target="_blank">Link</a></td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Access Point</td>
-                            <td>Ubiquiti UniFi 6 Enterprise</td>
-                            <td>€199,00</td>
-                            <td>€398,00</td>
-                            <td><a href="https://eu.store.ui.com/collections/unifi-network-wireless/products/u6-enterprise" target="_blank">Link</a></td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Access Point Ospiti</td>
-                            <td>Ubiquiti UniFi U6 Pro</td>
-                            <td>€159,00</td>
-                            <td>€159,00</td>
-                            <td><a href="https://eu.store.ui.com/collections/unifi-network-wireless/products/u6-pro" target="_blank">Link</a></td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Ripetitore</td>
-                            <td>Ubiquiti UniFi Mesh 6</td>
-                            <td>€99,00</td>
-                            <td>€198,00</td>
-                            <td><a href="https://eu.store.ui.com/collections/unifi-network-wireless/products/unifi-ap-mesh-6" target="_blank">Link</a></td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Server</td>
-                            <td>Dell PowerEdge R350 Rack Server</td>
-                            <td>€2.999,00</td>
-                            <td>€2.999,00</td>
-                            <td><a href="https://www.dell.com/it-it/shop/server-poweredge-r350/spd/poweredge-r350" target="_blank">Link</a></td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Stampante</td>
-                            <td>HP Color LaserJet Enterprise MFP M680dn</td>
-                            <td>€1.299,00</td>
-                            <td>€1.299,00</td>
-                            <td><a href="https://www.hp.com/it-it/shop/hp-color-laserjet-enterprise-mfp-m680dn-4xy94a.html" target="_blank">Link</a></td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Telecamera standard</td>
-                            <td>Ubiquiti UniFi G4 Dome</td>
-                            <td>€199,00</td>
-                            <td>€597,00</td>
-                            <td><a href="https://eu.store.ui.com/collections/unifi-protect/products/unifi-protect-g4-dome-camera" target="_blank">Link</a></td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Telecamera 180°</td>
-                            <td>Ubiquiti UniFi G4 PTZ</td>
-                            <td>€999,00</td>
-                            <td>€999,00</td>
-                            <td><a href="https://eu.store.ui.com/collections/unifi-protect/products/unifi-protect-g4-ptz-camera" target="_blank">Link</a></td>
-                        </tr>
-                        <tr>
-                            <td>30</td>
-                            <td>Cavo Ethernet</td>
-                            <td>Cavo di rete CAT6A 5m schermato con connettori RJ45</td>
-                            <td>€14,90</td>
-                            <td>€447,00</td>
-                            <td><a href="https://www.amazon.it/UGREEN-Network-Ethernet-RJ45-Shielded/dp/B01LXP5TFO/" target="_blank">Link</a></td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Patch Panel</td>
-                            <td>Patch Panel 24 Porte CAT6A</td>
-                            <td>€49,90</td>
-                            <td>€199,60</td>
-                            <td><a href="https://www.amazon.it/TP-Link-TL-PP24E-Passivo-Schermato-Rackmount/dp/B07D3G4F2K/" target="_blank">Link</a></td>
-                        </tr>
-                        <tr>
-                            <td colspan="4" class="text-end fw-bold">Totale</td>
-                            <td class="fw-bold">€9.073,60</td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-        
-        <!-- Schema personalizzato -->
-        <section>
-            <h2>Schema di Rete Personalizzato</h2>
-            <div class="schema-container">
-                <h4>Diagramma della Rete Aziendale</h4>
-                <img id="schemaImage" src="SISTEMI2.png" alt="Schema personalizzato della rete aziendale">
-                
-                <div class="editable-section">
-                    <!-- SEZIONE DA COMPLETARE -->
-                    <h5>Spiegazione dello Schema</h5>
-                    <p class="text-muted">[Inserisci qui la tua spiegazione dettagliata dello schema di rete]</p>
-                    <p class="text-muted">[Descrivi l'architettura, i flussi di dati, le connessioni principali e qualsiasi altra informazione rilevante]</p>
-                    <p class="text-muted">[Puoi elencare i punti principali in formato lista se preferisci]</p>
-                    <!-- FINE SEZIONE DA COMPLETARE -->
-                </div>
-            </div>
-        </section>
-        
-        <!-- Piano di indirizzamento IP -->
-        <section>
-            <h2>Piano di Indirizzamento IP</h2>
-            <div class="table-responsive">
-                <table class="table table-bordered address-table">
-                    <thead>
-                        <tr>
-                            <th>Dispositivo/Gruppo</th>
-                            <th>Indirizzo IP</th>
-                            <th>Subnet Mask</th>
-                            <th>Gateway</th>
-                            <th>Range IP</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Gateway (Router)</td>
-                            <td>192.168.1.1</td>
-                            <td>255.255.255.0</td>
-                            <td>-</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>Server</td>
-                            <td>192.168.1.10</td>
-                            <td>255.255.255.0</td>
-                            <td>192.168.1.1</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>Access Point 1</td>
-                            <td>192.168.1.20</td>
-                            <td>255.255.255.0</td>
-                            <td>192.168.1.1</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>Access Point 2</td>
-                            <td>192.168.1.21</td>
-                            <td>255.255.255.0</td>
-                            <td>192.168.1.1</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>Ripetitore 1</td>
-                            <td>192.168.1.35</td>
-                            <td>255.255.255.0</td>
-                            <td>192.168.1.1</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>Ripetitore 2</td>
-                            <td>192.168.1.36</td>
-                            <td>255.255.255.0</td>
-                            <td>192.168.1.1</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>Stampante</td>
-                            <td>192.168.1.30</td>
-                            <td>255.255.255.0</td>
-                            <td>192.168.1.1</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>Telecamere</td>
-                            <td>192.168.1.40-43</td>
-                            <td>255.255.255.0</td>
-                            <td>192.168.1.1</td>
-                            <td>192.168.1.40-49</td>
-                        </tr>
-                        <tr>
-                            <td>Scrivanie dipendenti</td>
-                            <td>192.168.1.50-76</td>
-                            <td>255.255.255.0</td>
-                            <td>192.168.1.1</td>
-                            <td>192.168.1.50-79</td>
-                        </tr>
-                        <tr>
-                            <td>Scrivanie tecnici</td>
-                            <td>192.168.1.80-81</td>
-                            <td>255.255.255.0</td>
-                            <td>192.168.1.1</td>
-                            <td>192.168.1.80-89</td>
-                        </tr>
-                        <tr>
-                            <td>Access Point Ospiti</td>
-                            <td>192.168.2.1</td>
-                            <td>255.255.255.0</td>
-                            <td>-</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>DHCP Range (Rete principale)</td>
-                            <td>-</td>
-                            <td>255.255.255.0</td>
-                            <td>192.168.1.1</td>
-                            <td>192.168.1.100-199</td>
-                        </tr>
-                        <tr>
-                            <td>DHCP Range (Rete ospiti)</td>
-                            <td>-</td>
-                            <td>255.255.255.0</td>
-                            <td>192.168.2.1</td>
-                            <td>192.168.2.100-199</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-        
-        <footer class="mt-5 pt-3 text-muted text-center">
-            <p>Progetto di Rete Aziendale</p>
-            <p>Ultimo aggiornamento: aprile 2025</p>
-        </footer>
+    <!-- Hero Section -->
+    <div class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">Progetto di Rete Aziendale</h1>
+            <p class="lead mb-4">Soluzione completa per uffici moderni ad alte prestazioni</p>
+            <span class="badge bg-light text-dark fs-6 p-3 mb-3">
+                <i class="bi bi-calendar-check"></i> Progetto aggiornato: Aprile 2025
+            </span>
+        </div>
     </div>
 
+    <div class="container py-5">
+        <!-- Navigation Tabs -->
+        <ul class="nav nav-pills mb-5 justify-content-center" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="pill" data-bs-target="#home" type="button" role="tab">Panoramica</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="materiali-tab" data-bs-toggle="pill" data-bs-target="#materiali" type="button" role="tab">Materiali</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="rete-tab" data-bs-toggle="pill" data-bs-target="#rete" type="button" role="tab">Architettura di Rete</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="preventivo-tab" data-bs-toggle="pill" data-bs-target="#preventivo" type="button" role="tab">Preventivo</button>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="myTabContent">
+            <!-- Panoramica -->
+            <div class="tab-pane fade show active" id="home" role="tabpanel">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card card-custom h-100">
+                            <div class="card-header card-header-custom">
+                                <h3 class="mb-0"><i class="bi bi-info-circle"></i> Descrizione del Progetto</h3>
+                            </div>
+                            <div class="card-body">
+                                <p>Questo progetto prevede la realizzazione di una rete aziendale completa per un ufficio di grandi dimensioni con i seguenti componenti:</p>
+                                <ul class="list-group list-group-flush mb-3">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        25 scrivanie per dipendenti
+                                        <span class="badge bg-primary rounded-pill">25</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        2 scrivanie per tecnici
+                                        <span class="badge bg-primary rounded-pill">2</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Dispositivi di rete e sicurezza
+                                        <span class="badge bg-primary rounded-pill">11</span>
+                                    </li>
+                                </ul>
+                                <p>L'infrastruttura è progettata per garantire:</p>
+                                <div class="row text-center mt-4">
+                                    <div class="col-md-4">
+                                        <i class="bi bi-speedometer2 feature-icon"></i>
+                                        <h5>Alte Prestazioni</h5>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <i class="bi bi-shield-check feature-icon"></i>
+                                        <h5>Sicurezza Avanzata</h5>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <i class="bi bi-arrow-repeat feature-icon"></i>
+                                        <h5>Affidabilità Totale</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="card card-custom h-100">
+                            <div class="card-header card-header-custom">
+                                <h3 class="mb-0"><i class="bi bi-list-check"></i> Specifiche Tecniche</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">Tipo di Rete</th>
+                                                <td>Gigabit Ethernet con WiFi 6</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Velocità di Rete</th>
+                                                <td>Fino a 10 Gbps cablato / 5.4 Gbps wireless</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Topologia</th>
+                                                <td>Stella gerarchica con ridondanza</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Protocolli Supportati</th>
+                                                <td>IPv4, IPv6, VLAN, QoS, PoE++</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Sicurezza</th>
+                                                <td>Firewall, VPN, Segmentazione rete, Controllo accessi</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Scalabilità</th>
+                                                <td>Fino a 150 dispositivi con espansione futura</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Materiali -->
+            <div class="tab-pane fade" id="materiali" role="tabpanel">
+                <div class="card card-custom">
+                    <div class="card-header card-header-custom">
+                        <h3 class="mb-0"><i class="bi bi-box-seam"></i> Materiali Necessari</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover table-custom">
+                                <thead>
+                                    <tr>
+                                        <th>Quantità</th>
+                                        <th>Tipologia</th>
+                                        <th>Descrizione</th>
+                                        <th>Prezzo Unitario</th>
+                                        <th>Totale</th>
+                                        <th>Link</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Router</td>
+                                        <td>Ubiquiti UniFi Dream Machine Pro</td>
+                                        <td>€379,00</td>
+                                        <td>€379,00</td>
+                                        <td><a href="https://eu.store.ui.com/collections/unifi-network-routing-switching/products/udm-pro" target="_blank" class="btn btn-sm btn-outline-primary"><i class="bi bi-link-45deg"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Switch</td>
+                                        <td>Ubiquiti UniFi Switch Pro 24 PoE</td>
+                                        <td>€699,00</td>
+                                        <td>€1.398,00</td>
+                                        <td><a href="https://eu.store.ui.com/collections/unifi-network-switching/products/usw-pro-24-poe" target="_blank" class="btn btn-sm btn-outline-primary"><i class="bi bi-link-45deg"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Access Point</td>
+                                        <td>Ubiquiti UniFi 6 Enterprise</td>
+                                        <td>€199,00</td>
+                                        <td>€398,00</td>
+                                        <td><a href="https://eu.store.ui.com/collections/unifi-network-wireless/products/u6-enterprise" target="_blank" class="btn btn-sm btn-outline-primary"><i class="bi bi-link-45deg"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Access Point Ospiti</td>
+                                        <td>Ubiquiti UniFi U6 Pro</td>
+                                        <td>€159,00</td>
+                                        <td>€159,00</td>
+                                        <td><a href="https://eu.store.ui.com/collections/unifi-network-wireless/products/u6-pro" target="_blank" class="btn btn-sm btn-outline-primary"><i class="bi bi-link-45deg"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Ripetitore</td>
+                                        <td>Ubiquiti UniFi Mesh 6</td>
+                                        <td>€99,00</td>
+                                        <td>€198,00</td>
+                                        <td><a href="https://eu.store.ui.com/collections/unifi-network-wireless/products/unifi-ap-mesh-6" target="_blank" class="btn btn-sm btn-outline-primary"><i class="bi bi-link-45deg"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Server</td>
+                                        <td>Dell PowerEdge R350 Rack Server</td>
+                                        <td>€2.999,00</td>
+                                        <td>€2.999,00</td>
+                                        <td><a href="https://www.dell.com/it-it/shop/server-poweredge-r350/spd/poweredge-r350" target="_blank" class="btn btn-sm btn-outline-primary"><i class="bi bi-link-45deg"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Stampante</td>
+                                        <td>HP Color LaserJet Enterprise MFP M680dn</td>
+                                        <td>€1.299,00</td>
+                                        <td>€1.299,00</td>
+                                        <td><a href="https://www.hp.com/it-it/shop/hp-color-laserjet-enterprise-mfp-m680dn-4xy94a.html" target="_blank" class="btn btn-sm btn-outline-primary"><i class="bi bi-link-45deg"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Telecamera standard</td>
+                                        <td>Ubiquiti UniFi G4 Dome</td>
+                                        <td>€199,00</td>
+                                        <td>€597,00</td>
+                                        <td><a href="https://eu.store.ui.com/collections/unifi-protect/products/unifi-protect-g4-dome-camera" target="_blank" class="btn btn-sm btn-outline-primary"><i class="bi bi-link-45deg"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Telecamera 180°</td>
+                                        <td>Ubiquiti UniFi G4 PTZ</td>
+                                        <td>€999,00</td>
+                                        <td>€999,00</td>
+                                        <td><a href="https://eu.store.ui.com/collections/unifi-protect/products/unifi-protect-g4-ptz-camera" target="_blank" class="btn btn-sm btn-outline-primary"><i class="bi bi-link-45deg"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>30</td>
+                                        <td>Cavo Ethernet</td>
+                                        <td>Cavo di rete CAT6A 5m schermato con connettori RJ45</td>
+                                        <td>€14,90</td>
+                                        <td>€447,00</td>
+                                        <td><a href="https://www.amazon.it/UGREEN-Network-Ethernet-RJ45-Shielded/dp/B01LXP5TFO/" target="_blank" class="btn btn-sm btn-outline-primary"><i class="bi bi-link-45deg"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>Patch Panel</td>
+                                        <td>Patch Panel 24 Porte CAT6A</td>
+                                        <td>€49,90</td>
+                                        <td>€199,60</td>
+                                        <td><a href="https://www.amazon.it/TP-Link-TL-PP24E-Passivo-Schermato-Rackmount/dp/B07D3G4F2K/" target="_blank" class="btn btn-sm btn-outline-primary"><i class="bi bi-link-45deg"></i></a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Architettura di Rete -->
+            <div class="tab-pane fade" id="rete" role="tabpanel">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="card card-custom">
+                            <div class="card-header card-header-custom">
+                                <h3 class="mb-0"><i class="bi bi-diagram-3"></i> Schema di Rete</h3>
+                            </div>
+                            <div class="card-body text-center">
+                                <img id="schemaImage" src="SISTEMI2.png" alt="Schema personalizzato della rete aziendale" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4">
+                        <div class="card card-custom h-100">
+                            <div class="card-header card-header-custom">
+                                <h3 class="mb-0"><i class="bi bi-journal-text"></i> Spiegazione Architettura</h3>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="text-primary">Topologia Gerarchica</h5>
+                                <p>La rete è progettata con architettura a stella gerarchica su tre livelli:</p>
+                                <ol>
+                                    <li><strong>Core Layer</strong>: Router Ubiquiti UDM Pro come nucleo centrale</li>
+                                    <li><strong>Distribution Layer</strong>: Switch PoE per la distribuzione</li>
+                                    <li><strong>Access Layer</strong>: Dispositivi terminali e connessioni wireless</li>
+                                </ol>
+                                
+                                <h5 class="text-primary mt-4">Segmentazione Rete</h5>
+                                <ul class="list-group list-group-flush mb-3">
+                                    <li class="list-group-item">
+                                        <i class="bi bi-pc-display text-primary"></i> <strong>Rete Principale</strong>: 192.168.1.0/24
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="bi bi-people text-primary"></i> <strong>Rete Ospiti</strong>: 192.168.2.0/24 (isolata)
+                                    </li>
+                                    <li class="list-group-item">
+                                        <i class="bi bi-camera-video text-primary"></i> <strong>Dispositivi IoT</strong>: VLAN separata
+                                    </li>
+                                </ul>
+                                
+                                <h5 class="text-primary mt-4">Flussi Principali</h5>
+                                <div class="alert alert-light">
+                                    <i class="bi bi-arrow-left-right"></i> <strong>Traffico dati</strong>: Switch → Server/Internet<br>
+                                    <i class="bi bi-wifi"></i> <strong>Wireless</strong>: 2 AP interni + 1 AP ospiti<br>
+                                    <i class="bi bi-shield-lock"></i> <strong>Sicurezza</strong>: Firewall integrato nel router
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 mt-4">
+                        <div class="card card-custom">
+                            <div class="card-header card-header-custom">
+                                <h3 class="mb-0"><i class="bi bi-list-ol"></i> Piano di Indirizzamento IP</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-custom">
+                                        <thead>
+                                            <tr>
+                                                <th>Dispositivo/Gruppo</th>
+                                                <th>Indirizzo IP</th>
+                                                <th>Subnet Mask</th>
+                                                <th>Gateway</th>
+                                                <th>Range IP</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Gateway (Router)</td>
+                                                <td>192.168.1.1</td>
+                                                <td>255.255.255.0</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Server</td>
+                                                <td>192.168.1.10</td>
+                                                <td>255.255.255.0</td>
+                                                <td>192.168.1.1</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Access Point 1</td>
+                                                <td>192.168.1.20</td>
+                                                <td>255.255.255.0</td>
+                                                <td>192.168.1.1</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Access Point 2</td>
+                                                <td>192.168.1.21</td>
+                                                <td>255.255.255.0</td>
+                                                <td>192.168.1.1</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Ripetitore 1</td>
+                                                <td>192.168.1.35</td>
+                                                <td>255.255.255.0</td>
+                                                <td>192.168.1.1</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Ripetitore 2</td>
+                                                <td>192.168.1.36</td>
+                                                <td>255.255.255.0</td>
+                                                <td>192.168.1.1</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Stampante</td>
+                                                <td>192.168.1.30</td>
+                                                <td>255.255.255.0</td>
+                                                <td>192.168.1.1</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Telecamere</td>
+                                                <td>192.168.1.40-43</td>
+                                                <td>255.255.255.0</td>
+                                                <td>192.168.1.1</td>
+                                                <td>192.168.1.40-49</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Scrivanie dipendenti</td>
+                                                <td>192.168.1.50-76</td>
+                                                <td>255.255.255.0</td>
+                                                <td>192.168.1.1</td>
+                                                <td>192.168.1.50-79</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Scrivanie tecnici</td>
+                                                <td>192.168.1.80-81</td>
+                                                <td>255.255.255.0</td>
+                                                <td>192.168.1.1</td>
+                                                <td>192.168.1.80-89</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Access Point Ospiti</td>
+                                                <td>192.168.2.1</td>
+                                                <td>255.255.255.0</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td>DHCP Range (Rete principale)</td>
+                                                <td>-</td>
+                                                <td>255.255.255.0</td>
+                                                <td>192.168.1.1</td>
+                                                <td>192.168.1.100-199</td>
+                                            </tr>
+                                            <tr>
+                                                <td>DHCP Range (Rete ospiti)</td>
+                                                <td>-</td>
+                                                <td>255.255.255.0</td>
+                                                <td>192.168.2.1</td>
+                                                <td>192.168.2.100-199</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preventivo -->
+            <div class="tab-pane fade" id="preventivo" role="tabpanel">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card card-custom h-100">
+                            <div class="card-header card-header-custom">
+                                <h3 class="mb-0"><i class="bi bi-tools"></i> Preventivo Manodopera</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Attività</th>
+                                                <th>Ore</th>
+                                                <th>Costo Orario</th>
+                                                <th>Totale</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Progettazione e pianificazione</td>
+                                                <td>8</td>
+                                                <td>€65,00</td>
+                                                <td>€520,00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Installazione cablaggio</td>
+                                                <td>16</td>
+                                                <td>€55,00</td>
+                                                <td>€880,00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Configurazione dispositivi</td>
+                                                <td>12</td>
+                                                <td>€75,00</td>
+                                                <td>€900,00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Test e ottimizzazione</td>
+                                                <td>6</td>
+                                                <td>€65,00</td>
+                                                <td>€390,00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Documentazione e formazione</td>
+                                                <td>4</td>
+                                                <td>€60,00</td>
+                                                <td>€240,00</td>
+                                            </tr>
+                                            <tr class="table-active">
+                                                <th>Totale Manodopera</th>
+                                                <th>46</th>
+                                                <th>-</th>
+                                                <th>€2.930,00</th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="alert alert-info mt-3">
+                                    <i class="bi bi-info-circle"></i> <strong>Nota:</strong> Il preventivo include 2 visite post-installazione per assistenza e ottimizzazioni.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="card card-custom h-100">
+                            <div class="card-header card-header-custom">
+                                <h3 class="mb-0"><i class="bi bi-calculator"></i> Riepilogo Costi</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="total-box">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <h5 class="text-muted">Costo Materiali:</h5>
+                                        </div>
+                                        <div class="col-6 text-end">
+                                            <h4>€9.073,60</h4>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row mt-3">
+                                        <div class="col-6">
+                                            <h5 class="text-muted">Costo Manodopera:</h5>
+                                        </div>
+                                        <div class="col-6 text-end">
+                                            <h4>€2.930,00</h4>
+                                        </div>
+                                    </div>
+                                    
+                                    <hr>
+                                    
+                                    <div class="row mt-3">
+                                        <div class="col-6">
+                                            <h4>Totale Progetto:</h4>
+                                        </div>
+                                        <div class="col-6 text-end">
+                                            <h3 class="text-primary">€12.003,60</h3>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row mt-4">
+                                        <div class="col-12">
+                                            <div class="d-grid gap-2">
+                                                <button class="btn btn-primary btn-lg">
+                                                    <i class="bi bi-file-earmark-pdf"></i> Scarica Preventivo Completo
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="alert alert-success mt-4">
+                                    <h5><i class="bi bi-lightning-charge"></i> Opzioni di Pagamento</h5>
+                                    <ul>
+                                        <li>50% all'ordine, 50% al collaudo</li>
+                                        <li>Rateizzazione su 3 mesi senza interessi</li>
+                                        <li>Pagamento completo (sconto 3%)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5><i class="bi bi-gear"></i> Tecnologie Utilizzate</h5>
+                    <ul class="list-unstyled">
+                        <li>Ubiquiti UniFi</li>
+                        <li>Dell PowerEdge</li>
+                        <li>HP Enterprise</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5><i class="bi bi-clock-history"></i> Tempistiche</h5>
+                    <ul class="list-unstyled">
+                        <li>Progettazione: 1 settimana</li>
+                        <li>Installazione: 2 settimane</li>
+                        <li>Collaudo: 3 giorni</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5><i class="bi bi-telephone"></i> Contatti</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-envelope"></i> info@reteaziendale.it</li>
+                        <li><i class="bi bi-phone"></i> +39 02 1234567</li>
+                        <li><i class="bi bi-geo-alt"></i> Milano, Italia</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="mt-4 mb-4" style="border-color: rgba(255,255,255,0.1);">
+            <p class="mb-0">Progetto di Rete Aziendale &copy; 2025 - Tutti i diritti riservati</p>
+        </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Abilita i tooltip
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        });
+    </script>
 </body>
 </html>
