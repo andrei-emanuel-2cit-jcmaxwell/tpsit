@@ -39,6 +39,13 @@
             border-radius: 5px;
             margin-top: 20px;
         }
+        .editable-section {
+            background-color: #f8f9fa;
+            border: 2px dashed #6c757d;
+            padding: 20px;
+            margin-bottom: 30px;
+            min-height: 200px;
+        }
     </style>
 </head>
 <body>
@@ -183,13 +190,97 @@
                 <h4>Diagramma della Rete Aziendale</h4>
                 <img id="schemaImage" src="SISTEMI2.png" alt="Schema personalizzato della rete aziendale">
                 
-                <div class="schema-description">
+                <div class="editable-section">
+                    <!-- SEZIONE DA COMPLETARE -->
                     <h5>Spiegazione dello Schema</h5>
-                    <p>Lo schema mostra l'architettura completa della rete aziendale con le seguenti caratteristiche:</p>
-                    <ol>
-                        <li><strong>Router principale</strong> (192.168.1.1) connesso direttamente alla rete internet con doppio WAN per ridondanza</li>
-                        <li><strong>Due switch PoE</strong> per la distribuzione del segnale a tutti i dispositivi con alimentazione PoE</li>
-                        <li><strong>Server aziendale</td>
+                    <p class="text-muted">[Inserisci qui la tua spiegazione dettagliata dello schema di rete]</p>
+                    <p class="text-muted">[Descrivi l'architettura, i flussi di dati, le connessioni principali e qualsiasi altra informazione rilevante]</p>
+                    <p class="text-muted">[Puoi elencare i punti principali in formato lista se preferisci]</p>
+                    <!-- FINE SEZIONE DA COMPLETARE -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- Piano di indirizzamento IP -->
+        <section>
+            <h2>Piano di Indirizzamento IP</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered address-table">
+                    <thead>
+                        <tr>
+                            <th>Dispositivo/Gruppo</th>
+                            <th>Indirizzo IP</th>
+                            <th>Subnet Mask</th>
+                            <th>Gateway</th>
+                            <th>Range IP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Gateway (Router)</td>
+                            <td>192.168.1.1</td>
+                            <td>255.255.255.0</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Server</td>
+                            <td>192.168.1.10</td>
+                            <td>255.255.255.0</td>
+                            <td>192.168.1.1</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Access Point 1</td>
+                            <td>192.168.1.20</td>
+                            <td>255.255.255.0</td>
+                            <td>192.168.1.1</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Access Point 2</td>
+                            <td>192.168.1.21</td>
+                            <td>255.255.255.0</td>
+                            <td>192.168.1.1</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Ripetitore 1</td>
+                            <td>192.168.1.35</td>
+                            <td>255.255.255.0</td>
+                            <td>192.168.1.1</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Ripetitore 2</td>
+                            <td>192.168.1.36</td>
+                            <td>255.255.255.0</td>
+                            <td>192.168.1.1</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Stampante</td>
+                            <td>192.168.1.30</td>
+                            <td>255.255.255.0</td>
+                            <td>192.168.1.1</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Telecamere</td>
+                            <td>192.168.1.40-43</td>
+                            <td>255.255.255.0</td>
+                            <td>192.168.1.1</td>
+                            <td>192.168.1.40-49</td>
+                        </tr>
+                        <tr>
+                            <td>Scrivanie dipendenti</td>
+                            <td>192.168.1.50-76</td>
+                            <td>255.255.255.0</td>
+                            <td>192.168.1.1</td>
+                            <td>192.168.1.50-79</td>
+                        </tr>
+                        <tr>
+                            <td>Scrivanie tecnici</td>
                             <td>192.168.1.80-81</td>
                             <td>255.255.255.0</td>
                             <td>192.168.1.1</td>
@@ -197,20 +288,20 @@
                         </tr>
                         <tr>
                             <td>Access Point Ospiti</td>
-                            <td>192.168.1.90</td>
+                            <td>192.168.2.1</td>
                             <td>255.255.255.0</td>
-                            <td>192.168.1.1</td>
+                            <td>-</td>
                             <td>-</td>
                         </tr>
                         <tr>
-                            <td>DHCP Range</td>
+                            <td>DHCP Range (Rete principale)</td>
                             <td>-</td>
                             <td>255.255.255.0</td>
                             <td>192.168.1.1</td>
                             <td>192.168.1.100-199</td>
                         </tr>
                         <tr>
-                            <td>Rete Ospiti DHCP</td>
+                            <td>DHCP Range (Rete ospiti)</td>
                             <td>-</td>
                             <td>255.255.255.0</td>
                             <td>192.168.2.1</td>
