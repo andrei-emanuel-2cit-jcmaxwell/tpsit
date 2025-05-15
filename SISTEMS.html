@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Progetto Rete Aziendale Completo - High Budget</title>
+    <title>Progetto Rete Aziendale - Interrogazione</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <style>
@@ -11,115 +11,165 @@
             --primary-color: #2c3e50;
             --secondary-color: #3498db;
             --accent-color: #e74c3c;
-            --light-bg: #f8f9fa;
         }
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
+            line-height: 1.6;
         }
         
-        .hero-section {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 4rem 0;
-            margin-bottom: 3rem;
-            border-radius: 0 0 20px 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        .network-diagram {
-            background-color: white;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-        }
-        
-        .ip-table th {
-            background-color: var(--primary-color);
-            color: white;
-        }
-        
-        .total-box {
-            background-color: white;
-            border-left: 5px solid var(--accent-color);
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin-top: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        
-        .material-card {
+        .explanation-card {
+            border-left: 4px solid var(--secondary-color);
             transition: transform 0.3s;
         }
         
-        .material-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        .explanation-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .network-schema {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .topology-badge {
+            font-size: 0.8rem;
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <div class="hero-section text-center">
-        <div class="container">
-            <h1 class="display-4 fw-bold mb-4">PROGETTO DI RETE AZIENDALE COMPLETO</h1>
-            <p class="lead mb-4">Soluzione High-Budget con NVR, Telecamere 180°, Cablaggio Strutturato e Gestione Centralizzata</p>
-            <div class="badge bg-light text-dark fs-6 p-3">
-                <i class="bi bi-calendar-check"></i> Progetto Aggiornato: Maggio 2025 | 
-                <i class="bi bi-cash-stack"></i> Budget: Alto | 
-                <i class="bi bi-shield-check"></i> Sicurezza: Enterprise
+    <div class="container py-4">
+        <h1 class="text-center mb-4"><i class="bi bi-diagram-3"></i> Progetto Rete Aziendale</h1>
+        
+        <!-- Schema Concettuale -->
+        <div class="network-schema">
+            <h3 class="text-center mb-3">Architettura di Rete</h3>
+            <div class="text-center mb-4">
+                <span class="badge bg-primary topology-badge me-2">Topologia a Stella Gerarchica</span>
+                <span class="badge bg-success topology-badge me-2">3 Livelli</span>
+                <span class="badge bg-info topology-badge">VLAN Multiple</span>
+            </div>
+            
+            <div class="row text-center">
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-header bg-primary text-white">
+                            <i class="bi bi-server"></i> Core Layer
+                        </div>
+                        <div class="card-body">
+                            <p>Server centrale (Dell PowerEdge)</p>
+                            <p>Router principale</p>
+                            <p>Firewall pfSense</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-header bg-primary text-white">
+                            <i class="bi bi-hdd-network"></i> Distribution Layer
+                        </div>
+                        <div class="card-body">
+                            <p>5 Switch 16 porte (Cisco CBS350)</p>
+                            <p>2 Switch 6 porte</p>
+                            <p>Patch Panel</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-header bg-primary text-white">
+                            <i class="bi bi-device-hdd"></i> Access Layer
+                        </div>
+                        <div class="card-body">
+                            <p>54 postazioni dipendenti</p>
+                            <p>4 Access Point (Aruba)</p>
+                            <p>6 stampanti di rete</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-4">
+                <h5>Flusso Dati Principale:</h5>
+                <p class="text-center mb-0">
+                    <i class="bi bi-arrow-right-circle"></i> Dispositivi → Switch → Router → Server/Internet
+                </p>
             </div>
         </div>
-    </div>
 
-    <div class="container py-5">
-        <!-- Network Diagram -->
-        <div class="network-diagram">
-            <h2 class="text-center mb-4"><i class="bi bi-diagram-3"></i> Schema di Rete Completo</h2>
-            <img src="SISTEMI2.png" alt="Diagramma della rete aziendale" class="img-fluid rounded mx-auto d-block">
-            <div class="row mt-4">
-                <div class="col-md-6">
-                    <h4><i class="bi bi-lightning-charge"></i> Componenti Principali:</h4>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">1 Server Centrale (Dell PowerEdge R760)</li>
-                        <li class="list-group-item">1 NVR Professionale (Ubiquiti UNVR Pro)</li>
-                        <li class="list-group-item">4 Telecamere (2 standard + 2 a 180°)</li>
-                        <li class="list-group-item">7 Switch (5×16 porte + 2×6 porte)</li>
-                        <li class="list-group-item">4 Access Point Gestiti (Aruba AP-535)</li>
-                    </ul>
+        <!-- Spiegazione NVR e Telecamere -->
+        <div class="row mt-4">
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 explanation-card">
+                    <div class="card-header bg-primary text-white">
+                        <i class="bi bi-camera-video"></i> Sistema di Videosorveglianza
+                    </div>
+                    <div class="card-body">
+                        <h5>Componenti:</h5>
+                        <ul>
+                            <li><strong>NVR Ubiquiti UNVR Pro</strong>: Gestisce 4 telecamere con storage su cloud</li>
+                            <li><strong>2 Telecamere 180°</strong>: Ubiquiti G5 Dome (FOV 180°)</li>
+                            <li><strong>2 Telecamere standard</strong>: Ubiquiti G5 Bullet</li>
+                        </ul>
+                        
+                        <h5 class="mt-3">Funzionamento:</h5>
+                        <p>Le telecamere sono alimentate via PoE++ dagli switch e trasmettono i video all'NVR attraverso una VLAN dedicata (VLAN 70). I tecnici accedono al sistema dalla stanza dedicata (VLAN 30).</p>
+                        
+                        <div class="alert alert-primary mt-3">
+                            <i class="bi bi-lightbulb"></i> <strong>Per l'interrogazione:</strong> Spiega il vantaggio delle telecamere 180° (copertura più ampia con meno dispositivi) e la differenza tra NVR e DVR.
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <h4><i class="bi bi-ethernet"></i> Specifiche Cablaggio:</h4>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">1,500m CAT6A (TIA/EIA-568B)</li>
-                        <li class="list-group-item">300m Fibra OM4 (collegamenti backbone)</li>
-                        <li class="list-group-item">Canalette 200mm (soffitto/pareti)</li>
-                        <li class="list-group-item">7 Prese di Rete (Keystone CAT6A)</li>
-                        <li class="list-group-item">Patch Panel 48 porte (2 unità)</li>
-                    </ul>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 explanation-card">
+                    <div class="card-header bg-primary text-white">
+                        <i class="bi bi-router"></i> Gestione della Rete
+                    </div>
+                    <div class="card-body">
+                        <h5>Segmentazione di Rete:</h5>
+                        <ul>
+                            <li><strong>VLAN 10</strong>: Dipendenti (54 postazioni)</li>
+                            <li><strong>VLAN 50</strong>: Ospiti (isolata, gestita da FritzBox)</li>
+                            <li><strong>VLAN 70</strong>: Telecamere (traffico prioritario)</li>
+                        </ul>
+                        
+                        <h5 class="mt-3">Sicurezza:</h5>
+                        <ul>
+                            <li>Autenticazione 802.1X per accesso alla rete</li>
+                            <li>Firewall con regole tra VLAN</li>
+                            <li>Monitoraggio traffico con Zabbix</li>
+                        </ul>
+                        
+                        <div class="alert alert-primary mt-3">
+                            <i class="bi bi-lightbulb"></i> <strong>Per l'interrogazione:</strong> Sottolinea l'importanza della segmentazione VLAN per sicurezza e QoS (Quality of Service).
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- IP Assignment -->
+        <!-- Tabella IP Completa -->
         <div class="card mt-4">
             <div class="card-header bg-primary text-white">
-                <h3 class="mb-0"><i class="bi bi-pc-display-horizontal"></i> Assegnazione Indirizzi IP</h3>
+                <i class="bi bi-table"></i> Schema di Indirizzamento IP
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table ip-table">
-                        <thead>
+                    <table class="table table-bordered">
+                        <thead class="table-dark">
                             <tr>
-                                <th>Sezione</th>
+                                <th>Funzione</th>
                                 <th>Range IP</th>
                                 <th>Subnet Mask</th>
                                 <th>Gateway</th>
                                 <th>VLAN</th>
-                                <th>Dispositivi</th>
+                                <th>Esempio</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -129,7 +179,7 @@
                                 <td>255.255.255.0</td>
                                 <td>192.168.10.1</td>
                                 <td>10</td>
-                                <td>54 postazioni</td>
+                                <td>PC1: 192.168.10.2</td>
                             </tr>
                             <tr>
                                 <td>Colloqui</td>
@@ -137,7 +187,7 @@
                                 <td>255.255.255.0</td>
                                 <td>192.168.20.1</td>
                                 <td>20</td>
-                                <td>3 postazioni</td>
+                                <td>Sala1: 192.168.20.2</td>
                             </tr>
                             <tr>
                                 <td>Tecnici Telecamere</td>
@@ -145,7 +195,7 @@
                                 <td>255.255.255.0</td>
                                 <td>192.168.30.1</td>
                                 <td>30</td>
-                                <td>2 postazioni + NVR</td>
+                                <td>NVR: 192.168.30.2</td>
                             </tr>
                             <tr>
                                 <td>Locale Tecnico</td>
@@ -153,15 +203,15 @@
                                 <td>255.255.255.0</td>
                                 <td>192.168.40.1</td>
                                 <td>40</td>
-                                <td>2 postazioni</td>
+                                <td>Tecnico1: 192.168.40.2</td>
                             </tr>
                             <tr>
-                                <td>Ospiti (Fritzbox)</td>
+                                <td>Ospiti</td>
                                 <td>192.168.50.100-200</td>
                                 <td>255.255.255.0</td>
                                 <td>192.168.50.1</td>
                                 <td>50</td>
-                                <td>DHCP</td>
+                                <td>DHCP automatico</td>
                             </tr>
                             <tr>
                                 <td>Stampanti</td>
@@ -169,7 +219,7 @@
                                 <td>255.255.255.0</td>
                                 <td>192.168.60.1</td>
                                 <td>60</td>
-                                <td>6 dispositivi</td>
+                                <td>Stamp1: 192.168.60.2</td>
                             </tr>
                             <tr>
                                 <td>Telecamere</td>
@@ -177,248 +227,95 @@
                                 <td>255.255.255.0</td>
                                 <td>192.168.70.1</td>
                                 <td>70</td>
-                                <td>4 telecamere</td>
-                            </tr>
-                            <tr>
-                                <td>Infrastruttura</td>
-                                <td>192.168.80.2-254</td>
-                                <td>255.255.255.0</td>
-                                <td>192.168.80.1</td>
-                                <td>80</td>
-                                <td>Switch/AP</td>
+                                <td>Cam1: 192.168.70.2</td>
                             </tr>
                         </tbody>
                     </table>
-                </div>
-            </div>
-        </div>
-
-        <!-- Materiali -->
-        <h2 class="mt-5 mb-4"><i class="bi bi-box-seam"></i> Materiali e Preventivo</h2>
-        <div class="row">
-            <!-- Server e Storage -->
-            <div class="col-md-6 mb-4">
-                <div class="card material-card h-100">
-                    <div class="card-header bg-primary text-white">
-                        <h4><i class="bi bi-server"></i> Server e Storage</h4>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item d-flex justify-content-between">
-                                <span>Dell PowerEdge R760 (32GB, 2×1TB SSD)</span>
-                                <span class="badge bg-primary">€8,500</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between">
-                                <span>Ubiquiti UNVR Pro + 4TB HDD</span>
-                                <span class="badge bg-primary">€1,200</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Rete e Telecamere -->
-            <div class="col-md-6 mb-4">
-                <div class="card material-card h-100">
-                    <div class="card-header bg-primary text-white">
-                        <h4><i class="bi bi-camera-video"></i> Telecamere e Sicurezza</h4>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item d-flex justify-content-between">
-                                <span>2× Ubiquiti G5 Dome (180° FOV)</span>
-                                <span class="badge bg-primary">€598</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between">
-                                <span>2× Ubiquiti G5 Bullet (Standard)</span>
-                                <span class="badge bg-primary">€398</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Switch e Rete -->
-            <div class="col-md-6 mb-4">
-                <div class="card material-card h-100">
-                    <div class="card-header bg-primary text-white">
-                        <h4><i class="bi bi-hdd-network"></i> Switch e Rete</h4>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item d-flex justify-content-between">
-                                <span>5× Cisco CBS350-16P (PoE++)</span>
-                                <span class="badge bg-primary">€6,250</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between">
-                                <span>2× Cisco CBS350-8P (PoE+)</span>
-                                <span class="badge bg-primary">€1,400</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between">
-                                <span>4× Aruba AP-535 (WiFi 6)</span>
-                                <span class="badge bg-primary">€3,600</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Cablaggio -->
-            <div class="col-md-6 mb-4">
-                <div class="card material-card h-100">
-                    <div class="card-header bg-primary text-white">
-                        <h4><i class="bi bi-ethernet"></i> Cablaggio e Infrastruttura</h4>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item d-flex justify-content-between">
-                                <span>1,500m Cavo CAT6A (S/FTP)</span>
-                                <span class="badge bg-primary">€2,800</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between">
-                                <span>300m Fibra OM4 (LC-LC)</span>
-                                <span class="badge bg-primary">€1,500</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between">
-                                <span>Armadio Rack 42U + Accessori</span>
-                                <span class="badge bg-primary">€1,200</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Preventivo Totale -->
-        <div class="total-box">
-            <h3 class="text-center mb-4"><i class="bi bi-calculator"></i> Preventivo Completo</h3>
-            <div class="row">
-                <div class="col-md-6">
-                    <h5>Materiali:</h5>
-                    <table class="table table-bordered">
-                        <tbody>
-                            <tr>
-                                <td>Server e Storage</td>
-                                <td class="text-end">€9,700</td>
-                            </tr>
-                            <tr>
-                                <td>Telecamere e Sicurezza</td>
-                                <td class="text-end">€996</td>
-                            </tr>
-                            <tr>
-                                <td>Switch e Rete</td>
-                                <td class="text-end">€11,250</td>
-                            </tr>
-                            <tr>
-                                <td>Cablaggio</td>
-                                <td class="text-end">€5,500</td>
-                            </tr>
-                            <tr class="table-active">
-                                <th>Totale Materiali</th>
-                                <th class="text-end">€27,446</th>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-md-6">
-                    <h5>Manodopera:</h5>
-                    <table class="table table-bordered">
-                        <tbody>
-                            <tr>
-                                <td>Progettazione</td>
-                                <td class="text-end">€1,200</td>
-                            </tr>
-                            <tr>
-                                <td>Installazione</td>
-                                <td class="text-end">€9,750</td>
-                            </tr>
-                            <tr>
-                                <td>Configurazione</td>
-                                <td class="text-end">€3,200</td>
-                            </tr>
-                            <tr class="table-active">
-                                <th>Totale Manodopera</th>
-                                <th class="text-end">€14,150</th>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <hr>
-            <div class="text-center mt-3">
-                <h4>Totale Progetto: <span class="text-primary">€41,596</span> + IVA</h4>
-                <p class="text-muted">(Preventivo valido 30 giorni | Pagamento: 50% all'ordine, 50% al collaudo)</p>
-                <button class="btn btn-primary btn-lg mt-2">
-                    <i class="bi bi-file-earmark-pdf"></i> Scarica Preventivo Dettagliato
-                </button>
-            </div>
-        </div>
-
-        <!-- Specifiche Tecniche -->
-        <div class="card mt-5">
-            <div class="card-header bg-primary text-white">
-                <h3 class="mb-0"><i class="bi bi-clipboard2-check"></i> Specifiche Tecniche e Standard</h3>
-            </div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h5><i class="bi bi-ethernet"></i> Standard di Cablaggio</h5>
-                        <ul>
-                            <li>TIA/EIA-568B per tutti i collegamenti in rame</li>
-                            <li>ISO/IEC 11801 per infrastruttura cablata</li>
-                            <li>Certificazione CAT6A con tester Fluke DSX-8000</li>
-                            <li>Canaline Elettrodotti PVC 200mm (colore grigio)</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
-                        <h5><i class="bi bi-shield-check"></i> Sicurezza e Gestione</h5>
-                        <ul>
-                            <li>VLAN separate per ogni reparto/funzione</li>
-                            <li>Firewall pfSense con VPN Site-to-Site</li>
-                            <li>Autenticazione 802.1X per accesso alla rete</li>
-                            <li>Monitoraggio continuo via Zabbix + Alerting</li>
-                        </ul>
-                    </div>
                 </div>
                 <div class="alert alert-info mt-3">
-                    <i class="bi bi-info-circle"></i> <strong>Nota Tecnica:</strong> Tutti gli switch supportano PoE++ (IEEE 802.3bt) per alimentare telecamere e access point, con ridondanza di alimentazione.
+                    <i class="bi bi-info-circle"></i> <strong>Nota:</strong> Tutte le subnet sono /24 (255.255.255.0) per semplicità di gestione. Il gateway è sempre il primo IP utilizzabile del range.
+                </div>
+            </div>
+        </div>
+
+        <!-- Cablaggio e Standard -->
+        <div class="row mt-4">
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 explanation-card">
+                    <div class="card-header bg-primary text-white">
+                        <i class="bi bi-ethernet"></i> Cablaggio Strutturato
+                    </div>
+                    <div class="card-body">
+                        <h5>Specifiche Tecniche:</h5>
+                        <ul>
+                            <li><strong>Standard:</strong> TIA/EIA-568B per tutti i cavaggi</li>
+                            <li><strong>Tipo cavi:</strong> CAT6A S/FTP (schermato)</li>
+                            <li><strong>Lunghezza stimata:</strong> 1,500m (con 20% di riserva)</li>
+                            <li><strong>Fibra ottica:</strong> 300m OM4 per collegamenti backbone</li>
+                        </ul>
+                        
+                        <h5 class="mt-3">Installazione:</h5>
+                        <ul>
+                            <li>Canalette portacavi 200mm nel soffitto</li>
+                            <li>Passaggio attraverso colonne esistenti</li>
+                            <li>7 prese di rete (doppia presa RJ45)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 explanation-card">
+                    <div class="card-header bg-primary text-white">
+                        <i class="bi bi-check-circle"></i> Testing e Manutenzione
+                    </div>
+                    <div class="card-body">
+                        <h5>Procedure di Test:</h5>
+                        <ul>
+                            <li><strong>Test continuità:</strong> Fluke LinkRunner</li>
+                            <li><strong>Prestazioni:</strong> Fluke DSX-8000 per certificazione CAT6A</li>
+                            <li><strong>Wireless:</strong> Analisi copertura con Ekahau</li>
+                        </ul>
+                        
+                        <h5 class="mt-3">Manutenzione Programmata:</h5>
+                        <ul>
+                            <li>Controlli bimestrali dello stato dei cablaggi</li>
+                            <li>Aggiornamenti firmware trimestrali</li>
+                            <li>Backup configurazioni mensili</li>
+                        </ul>
+                        
+                        <div class="alert alert-primary mt-3">
+                            <i class="bi bi-lightbulb"></i> <strong>Per l'interrogazione:</strong> Ricorda che lo standard 568B è più diffuso in Europa rispetto al 568A (usato principalmente in Nord America).
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Domande Potenziali -->
+        <div class="card mt-4 border-primary">
+            <div class="card-header bg-primary text-white">
+                <i class="bi bi-question-circle"></i> Domande per l'Interrogazione
+            </div>
+            <div class="card-body">
+                <ol>
+                    <li>Perché abbiamo scelto una topologia a stella gerarchica invece di una maglia completa?</li>
+                    <li>Come funziona l'alimentazione PoE++ per le telecamere e quali sono i vantaggi?</li>
+                    <li>Spiega la differenza tra NVR e DVR nel sistema di sorveglianza</li>
+                    <li>Perché è importante separare le VLAN per i diversi reparti?</li>
+                    <li>Come garantiamo la sicurezza della rete ospiti isolata?</li>
+                    <li>Quali strumenti useresti per testare un cavo CAT6A e quali parametri controlleresti?</li>
+                </ol>
+                <div class="alert alert-success mt-3">
+                    <i class="bi bi-journal-bookmark"></i> <strong>Suggerimento:</strong> Prepara esempi pratici per ogni domanda (es: "Se un dipendente collega un dispositivo non autorizzato, le VLAN impediscono...")
                 </div>
             </div>
         </div>
     </div>
 
-    <footer class="bg-dark text-white py-4 mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4 mb-md-0">
-                    <h5><i class="bi bi-gear"></i> Tecnologie</h5>
-                    <ul class="list-unstyled">
-                        <li>Ubiquiti UniFi Protect</li>
-                        <li>Cisco Business Series</li>
-                        <li>Aruba Instant On</li>
-                    </ul>
-                </div>
-                <div class="col-md-4 mb-4 mb-md-0">
-                    <h5><i class="bi bi-clock-history"></i> Tempistiche</h5>
-                    <ul class="list-unstyled">
-                        <li>Progettazione: 2 settimane</li>
-                        <li>Installazione: 3 settimane</li>
-                        <li>Collaudo: 1 settimana</li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5><i class="bi bi-telephone"></i> Contatti</h5>
-                    <ul class="list-unstyled">
-                        <li><i class="bi bi-envelope"></i> progetti@reteaziendale.com</li>
-                        <li><i class="bi bi-phone"></i> +39 02 9876543</li>
-                        <li><i class="bi bi-geo-alt"></i> Via Roma 123, Milano</li>
-                    </ul>
-                </div>
-            </div>
-            <hr class="my-4">
-            <p class="text-center mb-0">
-                Progetto di Rete Aziendale Completo &copy; 2025 | Tutti i diritti riservati
-            </p>
+    <footer class="bg-dark text-white py-3 mt-4">
+        <div class="container text-center">
+            <p class="mb-0">Progetto Rete Aziendale - Interrogazione | Realizzato con Bootstrap 5</p>
         </div>
     </footer>
 
