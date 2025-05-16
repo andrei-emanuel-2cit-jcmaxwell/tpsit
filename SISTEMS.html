@@ -70,6 +70,25 @@
             border-radius: 8px;
             margin-bottom: 10px;
         }
+        
+        /* Nuovi stili per la legenda compatta */
+        .compact-legend {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .legend-icon {
+            font-size: 1.5rem;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        .legend-color-box {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            vertical-align: middle;
+            border-radius: 3px;
+        }
     </style>
 </head>
 <body>
@@ -95,10 +114,38 @@
             </div>
             <div class="col-lg-4">
                 <div class="img-container h-100">
-                    <img src="legenda.png" alt="Legenda" class="img-fluid w-100" style="object-fit: contain; height: 100%;">
+                    <img src="1.png" alt="Mappa della rete" class="img-fluid w-100" style="object-fit: contain; height: 100%;">
                 </div>
-                <div class="mt-3 p-3 bg-white rounded shadow-sm">
-                    <h5><i class="bi bi-tags"></i> Legenda Cavi:</h5>
+                <div class="mt-3 p-4 bg-white rounded shadow-sm">
+                    <h4 class="mb-3"><i class="bi bi-tags"></i> Legenda Dispositivi</h4>
+                    <ul class="list-unstyled compact-legend">
+                        <li class="mb-2">
+                            <span class="legend-color-box" style="background-color: #2c3e50;"></span>
+                            <i class="bi bi-router legend-icon"></i> Router
+                        </li>
+                        <li class="mb-2">
+                            <span class="legend-color-box" style="background-color: #3498db;"></span>
+                            <i class="bi bi-hdd-stack legend-icon"></i> Switch
+                        </li>
+                        <li class="mb-2">
+                            <span class="legend-color-box" style="background-color: #e74c3c;"></span>
+                            <i class="bi bi-server legend-icon"></i> Server
+                        </li>
+                        <li class="mb-2">
+                            <span class="legend-color-box" style="background-color: #51cf66;"></span>
+                            <i class="bi bi-wifi legend-icon"></i> Ripetitori WiFi
+                        </li>
+                        <li class="mb-2">
+                            <span class="legend-color-box" style="background-color: #ff922b;"></span>
+                            <i class="bi bi-camera-video legend-icon"></i> Telecamere
+                        </li>
+                        <li class="mb-2">
+                            <span class="legend-color-box" style="background-color: #9c88ff;"></span>
+                            <i class="bi bi-printer legend-icon"></i> Stampanti
+                        </li>
+                    </ul>
+                    
+                    <h4 class="mt-4 mb-3"><i class="bi bi-ethernet"></i> Legenda Cavi</h4>
                     <div class="legend-item" style="background-color: #ffebee;">
                         <span class="cable-red">■ Rosso:</span> Router → Ripetitori
                     </div>
@@ -112,6 +159,7 @@
             </div>
         </div>
 
+        <!-- Resto del codice rimane invariato -->
         <!-- Dispositivi Premium -->
         <h2 class="mb-4 text-center"><i class="bi bi-pc-display"></i> Dispositivi High-End</h2>
         <div class="row g-4">
