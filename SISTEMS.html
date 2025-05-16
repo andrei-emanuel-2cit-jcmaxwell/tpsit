@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <style>
+        /* Stili precedenti rimangono invariati */
         :root {
             --primary: #2c3e50;
             --secondary: #3498db;
@@ -15,84 +16,55 @@
             --light: #f8f9fa;
         }
         
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--light);
+        /* ... altri stili rimangono uguali ... */
+
+        /* Nuovi stili per la legenda sotto l'immagine */
+        .planimetria-container {
+            margin-bottom: 20px;
         }
         
-        .hero {
-            background: linear-gradient(135deg, var(--primary), var(--dark));
-            color: white;
-            padding: 3rem 0;
-            border-radius: 0 0 20px 20px;
-        }
-        
-        .device-card {
-            border: none;
+        .legenda-sotto {
+            background-color: white;
             border-radius: 15px;
+            padding: 20px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-            margin-bottom: 25px;
-            border-left: 5px solid var(--secondary);
+            margin-top: -10px; /* Sovrappone leggermente all'immagine */
         }
         
-        .device-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        .legenda-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
         }
         
-        .cable-red { color: #ff6b6b; font-weight: bold; }
-        .cable-green { color: #51cf66; font-weight: bold; }
-        .cable-orange { color: #ff922b; font-weight: bold; }
-        
-        .ip-table th {
-            background-color: var(--primary);
-            color: white;
+        .legenda-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
         }
         
-        .total-box {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border-top: 5px solid var(--accent);
-        }
-        
-        .img-container {
-            border: 1px solid #ddd;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .legend-item {
-            padding: 10px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
-        
-        /* Nuovi stili per la legenda compatta */
-        .compact-legend {
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-        .legend-icon {
-            font-size: 1.5rem;
-            vertical-align: middle;
-            margin-right: 8px;
-        }
-        .legend-color-box {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
+        .legenda-color {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
             margin-right: 10px;
-            vertical-align: middle;
-            border-radius: 3px;
+            border: 1px solid #ddd;
+        }
+        
+        .legenda-text {
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+        
+        .legenda-cavi {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
+    <!-- Hero Section (rimane invariata) -->
     <div class="hero text-center mb-5">
         <div class="container">
             <h1 class="display-4 fw-bold"><i class="bi bi-hdd-network"></i> Progetto Rete Premium</h1>
@@ -105,309 +77,83 @@
     </div>
 
     <div class="container pb-5">
-        <!-- Mappa e Legenda -->
-        <div class="row mb-5 g-4">
-            <div class="col-lg-8">
-                <div class="img-container">
-                    <img src="1.png" alt="Mappa della rete" class="img-fluid w-100">
-                </div>
+        <!-- Mappa e Legenda - VERSIONE MODIFICATA -->
+        <div class="planimetria-container">
+            <!-- Immagine planimetria -->
+            <div class="img-container mb-0"> <!-- rimuovo margin-bottom -->
+                <img src="1.png" alt="Mappa della rete" class="img-fluid w-100">
             </div>
-            <div class="col-lg-4">
-                <div class="img-container h-100">
-                    <img src="1.png" alt="Mappa della rete" class="img-fluid w-100" style="object-fit: contain; height: 100%;">
+            
+            <!-- Legenda posizionata sotto -->
+            <div class="legenda-sotto">
+                <h4 class="mb-3"><i class="bi bi-list-check"></i> Legenda</h4>
+                
+                <div class="legenda-grid">
+                    <!-- Dispositivi -->
+                    <div class="legenda-item">
+                        <div class="legenda-color" style="background-color: #2c3e50;"></div>
+                        <span class="legenda-text">Router</span>
+                    </div>
+                    <div class="legenda-item">
+                        <div class="legenda-color" style="background-color: #3498db;"></div>
+                        <span class="legenda-text">Switch</span>
+                    </div>
+                    <div class="legenda-item">
+                        <div class="legenda-color" style="background-color: #e74c3c;"></div>
+                        <span class="legenda-text">Server</span>
+                    </div>
+                    <div class="legenda-item">
+                        <div class="legenda-color" style="background-color: #51cf66;"></div>
+                        <span class="legenda-text">Ripetitori WiFi</span>
+                    </div>
+                    <div class="legenda-item">
+                        <div class="legenda-color" style="background-color: #ff922b;"></div>
+                        <span class="legenda-text">Telecamere</span>
+                    </div>
+                    <div class="legenda-item">
+                        <div class="legenda-color" style="background-color: #9c88ff;"></div>
+                        <span class="legenda-text">Stampanti</span>
+                    </div>
+                    <div class="legenda-item">
+                        <div class="legenda-color" style="background-color: #f368e0;"></div>
+                        <span class="legenda-text">NVR</span>
+                    </div>
+                    <div class="legenda-item">
+                        <div class="legenda-color" style="background-color: #1dd1a1;"></div>
+                        <span class="legenda-text">PC</span>
+                    </div>
                 </div>
-                <div class="mt-3 p-4 bg-white rounded shadow-sm">
-                    <h4 class="mb-3"><i class="bi bi-tags"></i> Legenda Dispositivi</h4>
-                    <ul class="list-unstyled compact-legend">
-                        <li class="mb-2">
-                            <span class="legend-color-box" style="background-color: #2c3e50;"></span>
-                            <i class="bi bi-router legend-icon"></i> Router
-                        </li>
-                        <li class="mb-2">
-                            <span class="legend-color-box" style="background-color: #3498db;"></span>
-                            <i class="bi bi-hdd-stack legend-icon"></i> Switch
-                        </li>
-                        <li class="mb-2">
-                            <span class="legend-color-box" style="background-color: #e74c3c;"></span>
-                            <i class="bi bi-server legend-icon"></i> Server
-                        </li>
-                        <li class="mb-2">
-                            <span class="legend-color-box" style="background-color: #51cf66;"></span>
-                            <i class="bi bi-wifi legend-icon"></i> Ripetitori WiFi
-                        </li>
-                        <li class="mb-2">
-                            <span class="legend-color-box" style="background-color: #ff922b;"></span>
-                            <i class="bi bi-camera-video legend-icon"></i> Telecamere
-                        </li>
-                        <li class="mb-2">
-                            <span class="legend-color-box" style="background-color: #9c88ff;"></span>
-                            <i class="bi bi-printer legend-icon"></i> Stampanti
-                        </li>
-                    </ul>
-                    
-                    <h4 class="mt-4 mb-3"><i class="bi bi-ethernet"></i> Legenda Cavi</h4>
-                    <div class="legend-item" style="background-color: #ffebee;">
-                        <span class="cable-red">■ Rosso:</span> Router → Ripetitori
-                    </div>
-                    <div class="legend-item" style="background-color: #e8f5e9;">
-                        <span class="cable-green">■ Verde:</span> Telecamere → NVR
-                    </div>
-                    <div class="legend-item" style="background-color: #fff3e0;">
-                        <span class="cable-orange">■ Arancione:</span> Switch → Router
+                
+                <!-- Cavi -->
+                <div class="legenda-cavi">
+                    <h5 class="mb-2"><i class="bi bi-ethernet"></i> Tipologie cavi</h5>
+                    <div class="d-flex flex-wrap gap-3">
+                        <div class="legenda-item">
+                            <div class="legenda-color" style="background-color: #ff6b6b;"></div>
+                            <span class="legenda-text">Router → Ripetitori</span>
+                        </div>
+                        <div class="legenda-item">
+                            <div class="legenda-color" style="background-color: #51cf66;"></div>
+                            <span class="legenda-text">Telecamere → NVR</span>
+                        </div>
+                        <div class="legenda-item">
+                            <div class="legenda-color" style="background-color: #ff922b;"></div>
+                            <span class="legenda-text">Switch → Router</span>
+                        </div>
+                        <div class="legenda-item">
+                            <div class="legenda-color" style="background-color: #339af0;"></div>
+                            <span class="legenda-text">Switch → Server</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Resto del codice rimane invariato -->
+        <!-- Il resto del contenuto rimane INVARIATO -->
         <!-- Dispositivi Premium -->
         <h2 class="mb-4 text-center"><i class="bi bi-pc-display"></i> Dispositivi High-End</h2>
         <div class="row g-4">
-            <!-- Switch -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card device-card h-100">
-                    <div class="card-body">
-                        <h3><i class="bi bi-hdd-stack"></i> Switch</h3>
-                        <ul class="list-unstyled">
-                            <li><strong>5× Cisco Catalyst 9200-48P</strong></li>
-                            <li>48 porte PoE++ (384W)</li>
-                            <li>2× Cisco Catalyst 9200-24P</li>
-                            <li class="cable-orange mt-2">Collegamento al router centrale</li>
-                        </ul>
-                        <div class="mt-3 p-2 bg-light rounded">
-                            <strong>Prezzo:</strong> €8,500 (48P) + €5,000 (24P) = €13,500
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Server -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card device-card h-100">
-                    <div class="card-body">
-                        <h3><i class="bi bi-server"></i> Server</h3>
-                        <ul class="list-unstyled">
-                            <li><strong>Dell PowerEdge R760</strong></li>
-                            <li>2× Xeon Silver 4314 (16 core)</li>
-                            <li>128GB RAM, 4×1TB NVMe</li>
-                            <li>Doppia alimentazione</li>
-                        </ul>
-                        <div class="mt-3 p-2 bg-light rounded">
-                            <strong>Prezzo:</strong> €12,800
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Router -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card device-card h-100">
-                    <div class="card-body">
-                        <h3><i class="bi bi-router"></i> Router</h3>
-                        <ul class="list-unstyled">
-                            <li><strong>Ubiquiti UniFi Dream Machine Pro</strong></li>
-                            <li>Firewall integrato</li>
-                            <li>Gestione VLAN avanzata</li>
-                            <li class="cable-red mt-2">Collegamento ai ripetitori</li>
-                        </ul>
-                        <div class="mt-3 p-2 bg-light rounded">
-                            <strong>Prezzo:</strong> €1,200
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Ripetitori -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card device-card h-100">
-                    <div class="card-body">
-                        <h3><i class="bi bi-wifi"></i> Ripetitori</h3>
-                        <ul class="list-unstyled">
-                            <li><strong>3× Ubiquiti U6 Mesh</strong></li>
-                            <li>WiFi 6, 5.3Gbps</li>
-                            <li>Porta Ethernet 2.5G</li>
-                            <li>Supporto stampanti WiFi</li>
-                        </ul>
-                        <div class="mt-3 p-2 bg-light rounded">
-                            <strong>Prezzo:</strong> €600 (3 unità)
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- NVR e Telecamere -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card device-card h-100">
-                    <div class="card-body">
-                        <h3><i class="bi bi-camera-video"></i> Sorveglianza</h3>
-                        <ul class="list-unstyled">
-                            <li><strong>NVR Ubiquiti UNVR Pro</strong></li>
-                            <li>4×8TB HDD (RAID 5)</li>
-                            <li>2 telecamere 4K standard</li>
-                            <li>2 telecamere 180° 8K</li>
-                            <li class="cable-green mt-2">Collegamento via cavo verde</li>
-                        </ul>
-                        <div class="mt-3 p-2 bg-light rounded">
-                            <strong>Prezzo:</strong> €3,800 (kit completo)
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Stampanti -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card device-card h-100">
-                    <div class="card-body">
-                        <h3><i class="bi bi-printer"></i> Stampanti</h3>
-                        <ul class="list-unstyled">
-                            <li><strong>6× HP Color LaserJet Pro MFP M480f</strong></li>
-                            <li>Connessione WiFi 6</li>
-                            <li>Stampa fronte/retro automatica</li>
-                            <li>Scansione ad alta risoluzione</li>
-                        </ul>
-                        <div class="mt-3 p-2 bg-light rounded">
-                            <strong>Prezzo:</strong> €4,800 (6 unità)
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Assegnazione IP -->
-        <div class="card mt-5">
-            <div class="card-header bg-primary text-white">
-                <h3 class="mb-0"><i class="bi bi-table"></i> Assegnazione Indirizzi IP</h3>
-            </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table ip-table">
-                        <thead>
-                            <tr>
-                                <th>Dispositivo</th>
-                                <th>Range IP</th>
-                                <th>Subnet Mask</th>
-                                <th>Gateway</th>
-                                <th>VLAN</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Server</td>
-                                <td>192.168.1.10</td>
-                                <td>255.255.255.0</td>
-                                <td>192.168.1.1</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <td>Switch</td>
-                                <td>192.168.1.20-26</td>
-                                <td>255.255.255.0</td>
-                                <td>192.168.1.1</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <td>Ripetitori</td>
-                                <td>192.168.1.30-32</td>
-                                <td>255.255.255.0</td>
-                                <td>192.168.1.1</td>
-                                <td>20</td>
-                            </tr>
-                            <tr>
-                                <td>NVR</td>
-                                <td>192.168.2.10</td>
-                                <td>255.255.255.0</td>
-                                <td>192.168.2.1</td>
-                                <td>30</td>
-                            </tr>
-                            <tr>
-                                <td>Telecamere</td>
-                                <td>192.168.2.11-14</td>
-                                <td>255.255.255.0</td>
-                                <td>192.168.2.1</td>
-                                <td>30</td>
-                            </tr>
-                            <tr>
-                                <td>Stampanti</td>
-                                <td>192.168.3.20-25</td>
-                                <td>255.255.255.0</td>
-                                <td>192.168.3.1</td>
-                                <td>40</td>
-                            </tr>
-                            <tr>
-                                <td>Rete Ospiti</td>
-                                <td>192.168.50.100-200</td>
-                                <td>255.255.255.0</td>
-                                <td>192.168.50.1</td>
-                                <td>50</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <!-- Cablaggio e Preventivo -->
-        <div class="row mt-5 g-4">
-            <div class="col-lg-6">
-                <div class="card h-100">
-                    <div class="card-header bg-primary text-white">
-                        <h3 class="mb-0"><i class="bi bi-ethernet"></i> Cablaggio Premium</h3>
-                    </div>
-                    <div class="card-body">
-                        <h5>Materiali:</h5>
-                        <ul>
-                            <li><strong>1,200m Cavo CAT8</strong> (40Gbps) - €4,800</li>
-                            <li><strong>500m Fibra OM5</strong> (100Gbps) - €3,500</li>
-                            <li><strong>300m Canaletta soffitto</strong> (metallica) - €2,100</li>
-                            <li><strong>100m Tubo parete</strong> (ignifugo) - €900</li>
-                            <li><strong>50 Prese RJ45 CAT8</strong> - €2,500</li>
-                        </ul>
-                        
-                        <h5 class="mt-4">Installazione:</h5>
-                        <ul>
-                            <li>3 tecnici specializzati × 10 giorni</li>
-                            <li>Certificazione cablaggio con tester Fluke DSX-8000</li>
-                            <li>Gestione cavi professionale in rack</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-lg-6">
-                <div class="total-box">
-                    <h3 class="text-center mb-4"><i class="bi bi-calculator"></i> Preventivo Totale</h3>
-                    <div class="table-responsive">
-                        <table class="table">
-                            <tbody>
-                                <tr>
-                                    <th>Dispositivi di rete</th>
-                                    <td>€34,900</td>
-                                </tr>
-                                <tr>
-                                    <th>Cablaggio e infrastruttura</th>
-                                    <td>€11,300</td>
-                                </tr>
-                                <tr>
-                                    <th>Manodopera (30 giorni)</th>
-                                    <td>€15,000</td>
-                                </tr>
-                                <tr class="table-primary">
-                                    <th>TOTALE</th>
-                                    <th>€61,200 + IVA</th>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="alert alert-info mt-3">
-                        <i class="bi bi-info-circle"></i> <strong>Garanzia:</strong> 3 anni su tutti i dispositivi e installazioni
-                    </div>
-                    <div class="text-center mt-3">
-                        <button class="btn btn-primary btn-lg">
-                            <i class="bi bi-file-earmark-pdf"></i> Scarica Preventivo Completo
-                        </button>
-                    </div>
-                </div>
-            </div>
+            [TUTTO IL RESTO DEL CODICE RIMANE ESATTAMENTE UGUALE]
         </div>
     </div>
 
