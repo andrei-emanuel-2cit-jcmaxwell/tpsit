@@ -14,19 +14,19 @@
             --dark: #1a252f;
             --light: #f8f9fa;
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--light);
         }
-        
+
         .hero {
             background: linear-gradient(135deg, var(--primary), var(--dark));
             color: white;
             padding: 3rem 0;
             border-radius: 0 0 20px 20px;
         }
-        
+
         .device-card {
             border: none;
             border-radius: 15px;
@@ -35,21 +35,21 @@
             margin-bottom: 25px;
             border-left: 5px solid var(--secondary);
         }
-        
+
         .device-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
-        
+
         .cable-red { color: #ff6b6b; font-weight: bold; }
         .cable-green { color: #51cf66; font-weight: bold; }
         .cable-orange { color: #ff922b; font-weight: bold; }
-        
+
         .ip-table th {
             background-color: var(--primary);
             color: white;
         }
-        
+
         .total-box {
             background: white;
             border-radius: 15px;
@@ -57,19 +57,19 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             border-top: 5px solid var(--accent);
         }
-        
+
         .img-container {
             border: 1px solid #ddd;
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        
+
         /* Stili per la nuova legenda */
         .planimetria-container {
             margin-bottom: 30px;
         }
-        
+
         .legenda-sotto {
             background-color: white;
             border-radius: 0 0 15px 15px;
@@ -78,19 +78,19 @@
             margin-top: -5px;
             border-top: 1px solid #eee;
         }
-        
+
         .legenda-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 15px;
         }
-        
+
         .legenda-item {
             display: flex;
             align-items: center;
             margin-bottom: 8px;
         }
-        
+
         .legenda-color {
             width: 24px;
             height: 24px;
@@ -98,18 +98,18 @@
             margin-right: 10px;
             border: 1px solid #ddd;
         }
-        
+
         .legenda-text {
             font-size: 1.05rem;
             font-weight: 500;
         }
-        
+
         .legenda-cavi {
             margin-top: 20px;
             padding-top: 15px;
             border-top: 1px solid #eee;
         }
-        
+
         .legend-title {
             font-weight: 600;
             margin-bottom: 15px;
@@ -137,11 +137,11 @@
             <div class="img-container mb-0">
                 <img src="1.png" alt="Mappa della rete" class="img-fluid w-100">
             </div>
-            
+
             <!-- Legenda posizionata sotto -->
             <div class="legenda-sotto">
                 <h4 class="legend-title"><i class="bi bi-list-check"></i> Legenda Dispositivi e Collegamenti</h4>
-                
+
                 <div class="legenda-grid">
                     <!-- Dispositivi -->
                     <div class="legenda-item">
@@ -177,7 +177,7 @@
                         <span class="legenda-text">PC</span>
                     </div>
                 </div>
-                
+
                 <!-- Cavi -->
                 <div class="legenda-cavi">
                     <h5 class="legend-title"><i class="bi bi-ethernet"></i> Tipologie Cavi</h5>
@@ -223,7 +223,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Server -->
             <div class="col-md-6 col-lg-4">
                 <div class="card device-card h-100">
@@ -241,7 +241,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Router -->
             <div class="col-md-6 col-lg-4">
                 <div class="card device-card h-100">
@@ -259,7 +259,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Ripetitori -->
             <div class="col-md-6 col-lg-4">
                 <div class="card device-card h-100">
@@ -277,7 +277,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- NVR e Telecamere -->
             <div class="col-md-6 col-lg-4">
                 <div class="card device-card h-100">
@@ -296,7 +296,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Stampanti -->
             <div class="col-md-6 col-lg-4">
                 <div class="card device-card h-100">
@@ -394,7 +394,7 @@
             <div class="col-lg-6">
                 <div class="card h-100">
                     <div class="card-header bg-primary text-white">
-                        <h3 class="mb-0"><i class="bi bi-ethernet"></i> Cablaggio Premium</h3>
+                        <h3 class="mb-0"><i class="bi bi-ethernet"></i> Cablaggio </h3>
                     </div>
                     <div class="card-body">
                         <h5>Materiali:</h5>
@@ -405,17 +405,16 @@
                             <li><strong>100m Tubo parete</strong> (ignifugo) - €900</li>
                             <li><strong>50 Prese RJ45 CAT8</strong> - €2,500</li>
                         </ul>
-                        
+
                         <h5 class="mt-4">Installazione:</h5>
                         <ul>
                             <li>3 tecnici specializzati × 10 giorni</li>
                             <li>Certificazione cablaggio con tester Fluke DSX-8000</li>
-                            <li>Gestione cavi professionale in rack</li>
                         </ul>
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-lg-6">
                 <div class="total-box">
                     <h3 class="text-center mb-4"><i class="bi bi-calculator"></i> Preventivo Totale</h3>
